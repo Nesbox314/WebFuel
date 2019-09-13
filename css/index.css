@@ -1,3 +1,18 @@
 h1 {
-    color: red;
+    color : black;
+    font-size: 500%;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+body {
+    background-color: orange;
+}
+
+div {
+    background-color: black;
+}
+#log-tam {
+    width: 20vw;
+    height: 10vh;
 }
