@@ -5,14 +5,38 @@ h1 {
     
 }
 
-body {
-    background-color: orange;
-}
-
 div {
     background-color: black;
+    height: 15%;
 }
-#log-tam {
-    width: 20vw;
-    height: 10vh;
-}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 960px) {
+    body {
+        background-color: orange;
+    }
+
+    #log-tam {
+        height: 100%;
+    }
+  }
+  
+  /* Desktop Styles */
+  @media (min-width: 961px) {
+    body {
+        background-color: orange;
+    }
+
+    #log-tam{
+        height: 100%;
+    }
+  }
