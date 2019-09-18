@@ -7,20 +7,17 @@ h1 {
 
 div {
     background-color: black;
-    height: 15%;
+    height: 10%;
 }
 
-
-
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Mobile Styles */
-  @media (max-width: 960px) {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* Mobile Styles */
+@media (max-width: 960px) {
     body {
         background-color: orange;
     }
@@ -28,10 +25,10 @@ div {
     #log-tam {
         height: 100%;
     }
-  }
-  
-  /* Desktop Styles */
-  @media (min-width: 961px) {
+}
+
+/* Desktop Styles */
+@media (min-width: 961px) {
     body {
         background-color: orange;
     }
@@ -39,4 +36,4 @@ div {
     #log-tam{
         height: 100%;
     }
-  }
+}
