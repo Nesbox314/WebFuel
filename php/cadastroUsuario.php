@@ -1,6 +1,6 @@
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/login.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../css/cadastroUsuario.css" media="screen" />
 </head>
 <body>
     <div id="divCentral">
@@ -9,9 +9,9 @@
                 <input type="text" name="nome" placeholder="Nome completo:">
             </div>
             <div class="inputs">
-                <input type="text" name="nome" placeholder="E-mail:">
+                <input type="text" name="email" placeholder="E-mail:">
             </div>
-            <div class="inputs" name="password">
+            <div class="inputs">
                 <input type="password" name="password" placeholder="Senha:">
             </div>
             <div class="inputs">

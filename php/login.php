@@ -16,5 +16,8 @@
             </div>
         </form>
     </div>
+    <div style="text-align: center">
+        <p>Ainda não tem uma conta? Cadastre-se clicando <a href="cadastroUsuario.php">aqui</a></p>
+    </div>
 </body>
 </html>
