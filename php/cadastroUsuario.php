@@ -18,7 +18,7 @@
                 <input type="password" name="confirmPassword" placeholder="Confirme a sua senha:">
             </div>
             <div id="button">
-                <button type="submit">Cadastrar</button>
+                <button type="submit">CRIAR SUA CONTA</button>
             </div>
         </form>
     </div>
