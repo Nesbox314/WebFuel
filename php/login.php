@@ -16,6 +16,5 @@
             </div>
         </form>
     </div>
-    <p>Ainda não tem cadastro? Cadastre-se <a href="cadastroUsuario.php">aqui</a></p>
 </body>
 </html>
