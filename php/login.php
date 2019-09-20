@@ -4,6 +4,9 @@
 </head>
 <body>
     <div id="divCentral">
+        
+        <img scr=""
+        
         <form action="efetuaLogin.php" method="POST">
             <div class="inputs">
                 <input type="text" name="username" placeholder="Usuário:">
