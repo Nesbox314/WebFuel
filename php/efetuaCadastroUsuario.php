@@ -17,11 +17,6 @@ if($password == $passwordConfirm){
             location.href='./cadastroUsuario.php';
           </script>";
     }
-}else{
-    echo "<script>
-            window.alert('As senhas não conferem!');
-            location.href='./cadastroUsuario.php';
-          </script>";
 }
 
 ?>
