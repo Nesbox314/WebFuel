@@ -1,14 +1,13 @@
 body {
-    background-color: #f2f2f2;
+    background-color: orange;
 }
 
 #divCentral {
     margin: 0 auto;
-    background-color: orange;
+    background-color: black;
     margin-top: 30vh;
     width: 30%;
 }
-
 
 .inputs {
     padding-top: 5%;
@@ -24,34 +23,4 @@ input {
 
 #button {
   text-align: center;  
-}
-
-
-/*-----------------responsividade-------------------*/
-
-@media only screen and (max-width: 700px) {
-    #divCentral {
-        margin: 0 auto;
-        background-color: black;
-        margin-top: 30vh;
-        width: 85%;
-        }
-}
-
-@media only screen and (max-height: 380px) {
-    #divCentral {
-       margin: 0 auto;
-       background-color: black;
-       height:175px; 
-     }
-    input {
-      
-       height: 25px;
-      
-     }
-    .inputs {
-       padding-top: 25px;
-       padding-bottom: 10px;;
-      
-    }
 }
