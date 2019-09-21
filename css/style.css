@@ -66,6 +66,58 @@ h1 {
   #font-local{  
     font-size: 3vh; 
   }
+  #txt-posto {
+    font: normal 3.5vh helvetica;
+  
+  }
+  
+  .logo-posto {
+    width: 30vw;
+    border : 1.5px solid orange;
+    
+  
+  }
+  
+  .tam-div2 {
+    margin-top: 0.75vh;
+    
+  
+  }
+  
+  .titulo {
+    float: right;
+    margin-right: 10vw;
+    font-size: 3.5vh;
+    color: orange;
+    
+    
+  }
+  
+  #font-local2 {
+    color: black;
+    font-size: 3vh;
+    
+  }
+  #mel-ben {
+    font-size: 3vh;
+  }
+  
+  #Filtros {
+    font-size: 2vh;
+  }
+  
+  #font-comb {
+    color: black;
+    font-size: 2vh;
+  }
+  
+  #text-dir {
+    margin-left: 4vh;
+  }
+  
+  #text-dir2 {
+    margin-left: 8vh;
+  }
   }
   
   /* Desktop Styles */
@@ -122,9 +174,57 @@ text-align: left;
   font-size: 3vh;
   
 }
-  }
-
 #txt-posto {
   font: normal 3.5vh helvetica;
 
 }
+
+.logo-posto {
+  width: 30vw;
+  border : 1.5px solid orange;
+  
+
+}
+
+.tam-div2 {
+  margin-top: 0.75vh;
+  
+
+}
+
+.titulo {
+  float: right;
+  margin-right: 10vw;
+  font-size: 3.5vh;
+  color: orange;
+  
+  
+}
+
+#font-local2 {
+  color: black;
+  font-size: 3vh;
+  
+}
+#mel-ben {
+  font-size: 3vh;
+}
+
+#Filtros {
+  font-size: 2vh;
+}
+
+#font-comb {
+  color: black;
+  font-size: 2vh;
+}
+
+#text-dir {
+  margin-left: 4vh;
+}
+
+#text-dir2 {
+  margin-left: 8vh;
+}
+  }
+
