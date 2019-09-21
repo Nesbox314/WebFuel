@@ -1,11 +1,20 @@
 body {
     background-color: orange;
+     
+}
+
+h1{
+    color: white;
+    font-size: 3vh;
+    font-family:"Century Gothic";
+    
 }
 
 #divCentral {
     margin: 0 auto;
     background-color: black;
     margin-top: 30vh;
+    border-radius: 5px;
     width: 30%;
     padding-top: 3%;
     text-align: center;
@@ -13,18 +22,33 @@ body {
 .inputs {
     padding-top: 5%;
     padding-bottom: 5%;
+   
 }
 #button {
+  margin-top: 1vh;;
+  margin-bottom: 2vh;
   text-align: center; 
   border-radius: 5px;
+  font-family:"Century Gothic";
+   
 } 
 input {
     border-radius: 5%;
     height: 3vh;
     width: 80%;
     border-radius: 2px;
+    border-style:none;
+    
 }
 
-user agent stylesheet
-input:
+input {
+    
+    color: yellow;
+    
+}
+
+#img{
+    
+    height: 15%;
+    
 }
