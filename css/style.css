@@ -1,152 +1,45 @@
+
 h1 {
-    color : black;
-    font-size: 500%;
-    font-family: Arial, Helvetica, sans-serif;
-    
+  color : black;
+  font-size: 500%;
+  font-family:"Century Gothic";
+  
 }
 
 #div-logo {
-    background-color: black;
-    height: 15%;
+  background-color: black;
+  height: 15%;
 }
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Mobile Styles */
+@media screen and (max-width: 960px) {
+  body {
+      background-color: orange;
   }
 
-  
-  /* Mobile Styles */
-  @media screen and (max-width: 960px) {
-    body {
-        background-color: orange;
-    }
-
-    #log-tam {
-        height: 100%;
-    }
-    body{
-      background: rgb(245,245,245);
-      color: black;
-      font-size: 25px;
-      font-family: Helvetica;
-    }
-    h1{
-      font-family: Courier;
-      color: red;
-      font-weight: lighter;
-      font-size: 10px;
-    }
-    h2 {
-      font-family: Courier;
-      color: pink;
-      font-weight: lighter;
-      font-size: 8px;
-    }
-    a {
-      color: orange;
-      float: right;
-      margin-top: 15px;
-      margin-right: 5px;
-      font: normal 4vh arial;
-    }
-    a:hover {
-      text-decoration: none;
-      color: white;
-    }
-  #local{
-    margin-top: auto;
-    margin-bottom: -4px;
+  #log-tam {
+      height: 100%;
   }
-  .tam-div {
-  
-  color: black;
-  text-align: left;
-  }
-  #font-local{  
-    font-size: 3vh; 
-  }
-  #txt-posto {
-    font-size: normal 4.5vh Arial;
-  }
-  
-  .logo-posto {
-    width: 30vw;
-    border : 1.5px solid orange;
-  }
-  
-  .tam-div2 {
-    margin-top: 0.75vh;
-    
-  
-  }
-  
-  .titulo {
-    float: right;
-    margin-right: 10vw;
-    font-size: 2.5vh;
-    color: orange;
-    
-    
-  }
-  
-  #font-local2 {
-    color: black;
-    font-size: 2vh;
-    margin-left: 7vh;
-    
-  }
-  #mel-ben {
-    font-size: 3vh;
-  }
-  
-  #Filtros {
-    font-size: 3vh;
-    margin-left: 4px;
-  }
-  
-  #font-comb {
-    color: black;
-    font-size: 1.5vh;
-    width: 125%;
-    margin-left: 7vh;
-  }
-  
-  #text-dir {
-    
-    margin-left: 7vh;
-  }
-  
-  #text-dir2 {
-  
-    margin-left: 7vh;
-  }
-  }
-  
-  /* Desktop Styles */
-  @media screen and (min-width: 961px) {
-    body {
-        background-color: orange;
-    }
-
-    #log-tam{
-        height: 100%;
-    }
-    
   body{
     background: rgb(245,245,245);
     color: black;
     font-size: 25px;
-    font-family: Helvetica;
+    font-family:"Century Gothic";
   }
   h1{
-    font-family: Courier;
+    font-family:"Century Gothic";
     color: red;
     font-weight: lighter;
     font-size: 10px;
   }
   h2 {
-    font-family: Courier;
+    font-family:"Century Gothic";
     color: pink;
     font-weight: lighter;
     font-size: 8px;
@@ -154,10 +47,9 @@ h1 {
   a {
     color: orange;
     float: right;
-  
-    margin-right: 15px;
-    margin-top: 25px;
-    font-family: normal 3.5vh helvetica;
+    margin-top: 15px;
+    margin-right: 5px;
+    font: normal 4vh "Century Gothic";
   }
   a:hover {
     text-decoration: none;
@@ -166,7 +58,6 @@ h1 {
 #local{
   margin-top: auto;
   margin-bottom: -4px;
-
 }
 .tam-div {
 
@@ -174,20 +65,15 @@ color: black;
 text-align: left;
 }
 #font-local{  
-  font-size: 3vh;
- margin: center;
-  
+  font-size: 3vh; 
 }
 #txt-posto {
-  font: normal 3.5vh helvetica;
-
+  font-size: normal 4.5vh "Century Gothic";
 }
 
 .logo-posto {
   width: 30vw;
   border : 1.5px solid orange;
-  
-
 }
 
 .tam-div2 {
@@ -198,8 +84,8 @@ text-align: left;
 
 .titulo {
   float: right;
-  margin-right: 30vw;
-  font-size: 6h;
+  margin-right: 10vw;
+  font-size: 2.5vh;
   color: orange;
   
   
@@ -207,36 +93,154 @@ text-align: left;
 
 #font-local2 {
   color: black;
-  font-size: 5vh;
+  font-size: 2vh;
+  margin-left: 8vh;
+
+  
 }
 #mel-ben {
   font-size: 3vh;
-  margin-left: 5px;
 }
 
 #Filtros {
-  font-size: 2vh;
-  margin-left: 3px;
+  font-size: 3vh;
+  margin-left: 4px;
 }
 
 #font-comb {
   color: black;
-  font-size: 4vh;
-  width: 125%;
+  font-size: 1.5vh;
+  width: 90%;
+  margin-left: 1vh;
 }
 
 #text-dir {
-  float: right;
+  
+  margin-left: 11vh;
 }
 
 #text-dir2 {
-  float: right;
+
+  margin-left: 14vh;
 }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 961px) {
+  body {
+      background-color: orange;
   }
 
-  #txt-post {
-    width: 30vh;
-    height: 4vh;
-    margin-bottom: 2px;
-    margin-left: 3px;
+  #log-tam{
+      height: 100%;
   }
+  
+body{
+  background: rgb(245,245,245);
+  color: black;
+  font-size: 25px;
+  font-family:"Century Gothic";
+}
+h1{
+  font-family:"Century Gothic";
+  color: red;
+  font-weight: lighter;
+  font-size: 10px;
+}
+h2 {
+  font-family:"Century Gothic";
+  color: pink;
+  font-weight: lighter;
+  font-size: 8px;
+}
+a {
+  color: orange;
+  float: right;
+
+  margin-right: 15px;
+  margin-top: 25px;
+  font-family: normal 3.5vh "Century Gothic";
+}
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+#local{
+margin-top: auto;
+margin-bottom: -4px;
+
+}
+.tam-div {
+
+color: black;
+text-align: left;
+}
+#font-local{  
+font-size: 3vh;
+margin: center;
+
+}
+#txt-posto {
+font: normal 3.5vh "Century Gothic";
+
+}
+
+.logo-posto {
+width: 30vw;
+border : 1.5px solid orange;
+
+
+}
+
+.tam-div2 {
+margin-top: 0.75vh;
+
+
+}
+
+.titulo {
+float: right;
+margin-right: 30vw;
+font-size: 6h;
+color: orange;
+
+
+}
+
+#font-local2 {
+color: black;
+font-size: 5vh;
+
+}
+#mel-ben {
+font-size: 3vh;
+margin-left: 5px;
+}
+
+#Filtros {
+font-size: 2vh;
+margin-left: 3px;
+}
+
+#font-comb {
+color: black;
+font-size: 4vh;
+width: 125%;
+}
+
+#text-dir {
+float: right;
+}
+
+#text-dir2 {
+float: right;
+}
+}
+
+#txt-post {
+  width: 30vh;
+  height: 4vh;
+  margin-bottom: 2px;
+  margin-left: 3px;
+}
+
