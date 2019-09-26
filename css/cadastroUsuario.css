@@ -1,3 +1,4 @@
+
 {
     font-family:"Century Gothic";
 }
@@ -9,7 +10,9 @@ body {
 h1{
     color: white;
     font-size: 3vh;
-    font-family:"Century Gothic";   
+    font-family:"Century Gothic";
+
+    
 }
 
 #divCentral {
@@ -24,6 +27,7 @@ h1{
 .inputs {
     padding-top: 5%;
     padding-bottom: 5%;
+   
 }
 
 input {
@@ -33,6 +37,7 @@ input {
     border-radius: 2px;
     border-style:none;
     padding: 8px;
+    
 }
 
 
@@ -45,8 +50,9 @@ input {
   border-radius: 10px;
   font-family:"Century Gothic";
   background-color: white;
-  border-style:none;  
-}
+  border-style:none; 
+   
+} 
 
 #button:hover{
     background-color: darkorange;
@@ -81,8 +87,7 @@ input {
     border-style:none;
     
 }
-
-h1{
+    h1{
     color: white;
     font-size: 30px;
     font-family:"Century Gothic";
@@ -104,5 +109,10 @@ h1{
     #img{
     
     height: 160px; 
+}
+
+    
+
 }    
+
 }
