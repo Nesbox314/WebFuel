@@ -1,3 +1,29 @@
+body {
+    background-color: orange;
+}
+
+#divCentral {
+    margin: 0 auto;
+    background-color: black;
+    margin-top: 30vh;
+    width: 30%;
+    padding-top: 3%;
+    text-align: center;
+}
+.inputs {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+#button {
+  text-align: center; 
+  border-radius: 5px;
+} 
+input {
+    border-radius: 5%;
+    height: 3vh;
+    width: 80%;
+    border-radius: 2px;
+}
 
 h1{
     font-family:"Century Gothic";
@@ -113,5 +139,6 @@ input {
 }
 
     
+
 
 }
