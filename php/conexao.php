@@ -1,8 +1,8 @@
 <?php
-    $servername = "10.8.130.115";
-    $database = "webfuel";
+    $servername = "127.0.0.1";
+    $database = "WebFuel";
     $username = "root";
-    $password = "pass";
+    $password = "";
     
     $conn = mysqli_connect($servername, $username, $password, $database);
 ?>

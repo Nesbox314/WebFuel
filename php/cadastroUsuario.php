@@ -23,7 +23,8 @@
             <div class="inputs">
                 <input type="password" name="confirmPassword" placeholder="Confirme a sua senha:">
             </div>
-            <div >
+
+            <div>
                 <button type="submit" id="button">Criar Conta</button>
             </div>
         </form>
