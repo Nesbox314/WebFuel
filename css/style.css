@@ -1,14 +1,14 @@
 h1 {
     color : black;
     font-size: 500%;
-    font-family: Arial, Helvetica, sans-serif;
-    
+    font-family: "Century Gothic";
 }
 
 #div-logo {
     background-color: black;
     height: 15%;
 }
+
 * {
     margin: 0;
     padding: 0;
