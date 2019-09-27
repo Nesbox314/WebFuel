@@ -1,32 +1,26 @@
 <?php
 include 'conexao.php';
 
-$username = $_POST['username'];
+$email = $_POST['email'];
 $password = $_POST['password'];
  
-$sql = "SELECT * FROM usuarios WHERE username = '$username' AND password = '$password'";
+$sql = "SELECT * FROM usuarios WHERE email = '$email' AND password = '$password'";
 
 $sqlVerifica = mysqli_query($conn, $sql);
 
-$exibe = mysqli_fetch_assoc($sqlVerifica);
+if(mysqli_num_rows ($sqlVerifica) > 0 )
+{
+$_SESSION['username'] = $usernameSession;
+$_SESSION['email'] = $emailSession;
+$_SESSION['password'] = $passwordSession;
 
-$value = "testetestetestetesteet";
-
-if($exibe == null){
-      echo "cucabeludo";
-}else{
-    echo "<script>
-      window.alert('Usuário logado com sucesso!');
-      location.href='../index.html';
-    </script>";
-
-    setcookie("TestCookie", $value, time()+3600, "/", "example.com");
+header('location:../index.html');
 }
-
-/*if (mysqli_query($conn, $sql)) {
-while($exibe = mysqli_fetch_assoc($sqlTeste)){
-      echo $exibe['username'] .'<br>';
-}
-
-}*/
+else{
+  unset ($_SESSION['username']);
+  unset ($_SESSION['email']);
+  unset ($_SESSION['password']);
+  header('location:../index.html');
+   
+  }
 ?>

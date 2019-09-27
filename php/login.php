@@ -6,9 +6,9 @@
     <div id="divCentral">
         <form action="efetuaLogin.php" method="POST">
             <div class="inputs">
-                <input type="text" name="username" placeholder="Usuário:">
+                <input type="text" name="email" placeholder="E-mail:">
             </div>
-            <div class="inputs" name="password">
+            <div class="inputs">
                 <input type="password" name="password" placeholder="Senha:">
             </div>
             <div id="button">
