@@ -1,6 +1,6 @@
 <?php
-    $servername = "127.0.0.1";
-    $database = "WebFuel";
+    $servername = "10.8.145.197";
+    $database = "webfuel";
     $username = "root";
     $password = "";
     
