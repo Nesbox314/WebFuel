@@ -1,56 +1,83 @@
+{
+    font-family:"Century Gothic";
+}
+
 body {
-    background-color: orange;
+    background-color: orange;    
+}
+
+h1{
+    color: white;
+    font-size: 3vh;
+    font-family:"Century Gothic";   
+}
+
+#img{
+    
+    height: 15%; 
 }
 
 #divCentral {
     margin: 0 auto;
     background-color: black;
-    margin-top: 30vh;
+    margin-top: 15vh;
+    border-radius: 5px;
     width: 30%;
     padding-top: 3%;
     text-align: center;
 }
-.inputs {
-    padding-top: 5%;
-    padding-bottom: 5%;
-}
-#button {
-  text-align: center; 
-  border-radius: 5px;
-} 
+
 input {
     border-radius: 5%;
-    height: 3vh;
+    height: 4vh;
     width: 80%;
     border-radius: 2px;
+    border-style:none;
+    padding: 8px;
 }
+
+.inputs {
+    padding-top: 4%;
+    padding-bottom: 5%; 
+}
+
+#button {
+  margin-top: 1vh;;
+  margin-bottom: 3vh;
+  padding: 1vh;
+  width:10vh; 
+  text-align: center; 
+  border-radius: 10px;
+  font-family:"Century Gothic";
+  background-color: white;
+  border-style:none;  
+} 
+
+#button:hover{
+    background-color: darkorange;
+    color: white;
+}
+ 
+
 
 
 body {
     background-color: orange;
 }
 
-#divCentral {
-    margin: 0 auto;
-    background-color: black;
-    margin-top: 30vh;
-    width: 30%;
-}
 
-.inputs {
-    padding-top: 5%;
-    padding-bottom: 5%;
-    text-align: center;
-}
 
-input {
-    border-radius: 5%;
-    height: 5vh;
-    width: 80%;
 
-}
 
-/*-----------------responsividade-------------------*/
+
+
+
+
+
+
+
+
+/*-----------------responsividade-------------------
 
 @media only screen and (max-width: 700px) {
     #divCentral {
@@ -86,3 +113,4 @@ input {
 
     }
 
+*/
