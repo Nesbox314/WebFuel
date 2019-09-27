@@ -1,6 +1,34 @@
-{
+body {
+    background-color: orange;
+}
+
+#divCentral {
+    margin: 0 auto;
+    background-color: black;
+    margin-top: 30vh;
+    width: 30%;
+    padding-top: 3%;
+    text-align: center;
+}
+.inputs {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+#button {
+  text-align: center; 
+  border-radius: 5px;
+} 
+input {
+    border-radius: 5%;
+    height: 3vh;
+    width: 80%;
+    border-radius: 2px;
+}
+
+h1{
     font-family:"Century Gothic";
 }
+
 body {
     background-color: orange;
      
@@ -9,7 +37,9 @@ body {
 h1{
     color: white;
     font-size: 3vh;
-    font-family:"Century Gothic";   
+    font-family:"Century Gothic";
+
+    
 }
 
 #divCentral {
@@ -22,17 +52,19 @@ h1{
     text-align: center;
 }
 .inputs {
-    padding-top: 5%;
+    padding-top: 4%;
     padding-bottom: 5%;
+   
 }
 
 input {
     border-radius: 5%;
-    height: 3vh;
+    height: 4vh;
     width: 80%;
     border-radius: 2px;
     border-style:none;
     padding: 8px;
+    
 }
 
 
@@ -45,8 +77,9 @@ input {
   border-radius: 10px;
   font-family:"Century Gothic";
   background-color: white;
-  border-style:none;  
-}
+  border-style:none; 
+   
+} 
 
 #button:hover{
     background-color: darkorange;
@@ -81,8 +114,7 @@ input {
     border-style:none;
     
 }
-
-h1{
+    h1{
     color: white;
     font-size: 30px;
     font-family:"Century Gothic";
@@ -104,5 +136,9 @@ h1{
     #img{
     
     height: 160px; 
-}    
+}
+
+    
+
+
 }
