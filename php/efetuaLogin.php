@@ -14,13 +14,13 @@ $_SESSION['username'] = $usernameSession;
 $_SESSION['email'] = $emailSession;
 $_SESSION['password'] = $passwordSession;
 
-header('location:../index.html');
+header('location:../index.php');
 }
-else{
+/*else{
   unset ($_SESSION['username']);
   unset ($_SESSION['email']);
   unset ($_SESSION['password']);
   header('location:../index.html');
    
-  }
+  }*/
 ?>
