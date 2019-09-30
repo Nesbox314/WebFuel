@@ -11,7 +11,7 @@
 <img id="log-tam" src="img/logo-fundo-branco.png">
 <span>
     <a id="entrar" href="php/login.php"><strong>Entrar</strong></a>
-    <p>Logado como: <?php?></p>
+    <!--p>Logado como: </p-->
   </span>
     </div>
  
