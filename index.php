@@ -8,15 +8,16 @@
 </head>
 <body>
     <div id="div-logo">
-<img id="log-tam" src="img/logo-fundo-branco.png"></img>
+<img id="log-tam" src="img/logo-fundo-branco.png">
 <span>
     <a id="entrar" href="php/login.php"><strong>Entrar</strong></a>
+    <!--p>Logado como: </p-->
   </span>
     </div>
  
     <div class="tam-div" style="background-color: white" >
         
-        <img id="local" src="img/icone-local.svg"></img>
+        <img id="local" src="img/icone-local.svg">
     <span id="font-local">Rua: São Paulo, Floresta, Joinville</span>
     </div>
         
@@ -29,12 +30,12 @@
         
         <div class="tam-div2" style="background-color: orange" >
             <div style="background-color: white">
-                <img class="logo-posto" src="img/shell-logo.png"></img>
+                <img class="logo-posto" src="img/shell-logo.png">
                 <div class="titulo">Auto Posto Gasoline
                     <div>
-                        <img id="local" src="img/estrela.svg"></img>
+                        <img id="local" src="img/estrela.svg">
                         <span id="font-local2">4,5</span>
-                        <img id="local" src="img/localização.svg"></img>
+                        <img id="local" src="img/localização.svg">
                         <span id="font-local2">2,3 km de você</span>
                     </div>
                     <div id= "font-comb" style="background-color: rgb(231, 231, 231)">
