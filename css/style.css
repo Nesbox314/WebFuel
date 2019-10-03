@@ -1,7 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 h1 {
     color : black;
     font-size: 500%;
-    font-family: "Century Gothic";
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #div-logo {
@@ -9,117 +15,113 @@ h1 {
     height: 10%;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  
   /* Mobile Styles */
   @media screen and (max-width: 960px) {
-    body {
-        background-color: orange;
-    }
+      body {
+          background-color: orange;
+      }
 
-    #log-tam {
-        height: 100%;
-    }
-    body{
-      background: rgb(245,245,245);
-      color: black;
-      font-size: 15%;
-      font-family: "Century Gothic";
-    }
-    h1{
-      font-family: "Century Gothic";
-      color: red;
-      font-weight: lighter;
-      font-size: 10%;
-    }
-    h2 {
-      font-family: "Century Gothic";
-      color: pink;
-      font-weight: lighter;
-      font-size: 8%;
-    }
-    a {
-      color: orange;
-      float: right;
-      margin-top: 35px;
-      margin-right: 12px;
-      font: normal 3vh "Century Gothic";
-    }
-    a:hover {
-      text-decoration: none;
-      color: white;
-    }
-  #local{
-    margin-top: auto;
-    margin-bottom: -4px;
-  }
-  .tam-div {
-  
-  color: black;
-  text-align: left;
-  }
-  #font-local{  
-    font-size: 2.25vh; 
-  }
-  #txt-posto {
-    font: normal 3.5vh "Century Gothic";
-  
-  }
-  
-  .logo-posto {
-    width: 32vw;
-    height: 27vw;
-    border : 1.5px solid orange;
+      #log-tam {
+          height: 100%;
+      }
+
+      body{
+          background: rgb(245,245,245);
+          color: black;
+          font-size: 15%;
+          font-family: "Century Gothic";
+      }
+
+      h1{
+          font-family: "Century Gothic";
+          color: red;
+          font-weight: lighter;
+          font-size: 10%;
+      }
+
+      h2 {
+        font-family: "Century Gothic";
+        color: pink;
+        font-weight: lighter;
+        font-size: 8%;
+      }
+
+      a {
+        color: orange;
+        float: right;
+        margin-top: 35px;
+        margin-right: 12px;
+        font: normal 3vh "Century Gothic";
+      }
+
+      a:hover {
+        text-decoration: none;
+        color: white;
+      }
+
+      #local{
+        margin-top: auto;
+        margin-bottom: -4px;
+      }
+
+      .tam-div {
+        color: black;
+        text-align: left;
+      }
+
+      #font-local{  
+        font-size: 2.25vh; 
+        font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+      }
+
+      #txt-posto {
+        font: normal 3.5vh "Century Gothic";
+      }
     
-  
-  }
-  
-  .tam-div2 {
-    margin-top: 0.75vh;
+      .logo-posto {
+        width: 32vw;
+        height: 27vw;
+        border : 1.5px solid orange;
+      }
     
-  
-  }
-  
-  .titulo {
-    float: right;
-    margin-right: 1vw;
-    font-size: 2.5vh;
-    color: orange;
+      .tam-div2 {
+        margin-top: 0.75vh;
+      }         
     
+      .titulo {
+        float: right;
+        margin-right: 1vw;
+        font-size: 2.5vh;
+        color: orange; 
+      }
     
-  }
-  
-  #font-local2 {
-    color: black;
-    font-size: 2vh;
+      #font-local2 {
+        color: black;
+        font-size: 2vh;
+        font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+      }
+
+      #mel-ben {
+        font-size: 2.25vh;
+      }
     
-  }
-  #mel-ben {
-    font-size: 2.25vh;
-  }
-  
-  #Filtros {
-    font-size: 2vh;
-  }
-  
-  #font-comb {
-    color: black;
-    font-size: 1.75vh;
-    border-radius: 1vh;
-  }
-  
-  #text-dir {
-    margin-left: 4vh;
-  }
-  
-  #text-dir2 {
-    margin-left: 8vh;
-  }
+      #Filtros {
+        font-size: 2vh;
+      }
+      
+      #font-comb {
+        color: black;
+        font-size: 1.75vh;
+        border-radius: 1vh;
+      }
+      
+      #text-dir {
+        margin-left: 4vh;
+      }
+      
+      #text-dir2 {
+        margin-left: 8vh;
+      }
   }
   
   /* Desktop Styles */
@@ -129,117 +131,120 @@ h1 {
     }
 
     #log-tam{
-        height: 95%;
+      height: 95%;
     }
     
-  body{
-    background: rgb(245,245,245);
-    color: black;
-    font-size: 25px;
-    font-family: "Century Gothic";
-  }
-  h1{
-    font-family: "Century Gothic";
-    color: red;
-    font-weight: lighter;
-    font-size: 10px;
-  }
-  h2 {
-    font-family: "Century Gothic";
-    color: pink;
-    font-weight: lighter;
-    font-size: 8px;
-  }
-  a {
-    color: orange;
-    float: right;
-  
-    margin-right: 15px;
-    margin-top: 25px;
-    font-family: normal 3.5vh "Century Gothic";
-  }
-  a:hover {
-    text-decoration: none;
-    color: white;
-  }
-#local{
-  margin-top: auto;
-  margin-bottom: -4px;
+    body{
+      background: rgb(245,245,245);
+      color: black;
+      font-size: 25px;
+      font-family: "Century Gothic";
+    }
+
+    h1 {
+      font-family: "Century Gothic";
+      color: red;
+      font-weight: lighter;
+      font-size: 10px;
+    }
+
+    h2 {
+      font-family: "Century Gothic";
+      color: pink;
+      font-weight: lighter;
+      font-size: 8px;
+    }
+
+    a {
+      color: orange;
+      float: right;
+      margin-right: 15px;
+      margin-top: 25px;
+      font-family: normal 3.5vh "Century Gothic";
+    }
+
+    a:hover {
+      text-decoration: none;
+      color: white;
+    }
+
+    #local{
+      margin-top: auto;
+      margin-bottom: -4px;
+    }
+
+    .tam-div {
+      color: black;
+      text-align: left;
+    }
+
+    #font-local{  
+      font-size: 3vh;
+      font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    }
+
+    #txt-posto {
+      font: normal 3.5vh "Century Gothic";
+      margin-top: 15vh;
+    }
+
+    .logo-posto {
+      width: 20vw;
+      border : 1.5px solid orange;     
+    }
+
+    .tam-div2 {
+      margin-top: 0.75vh;
+    }
+
+    .titulo {
+      float: right;
+      margin-right: 10vw;
+      font-size: 3.5vh;
+      color: orange;
+    }
+
+    #font-local2 {
+      color: black;
+      font-size: 3vh;
+      font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    }
+
+    .titulo {
+      font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    }
+
+    #mel-ben {
+      font-size: 3vh;
+      font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    }
+
+    #Filtros {
+      font-size: 2.5vh;
+      margin-top:2vh;  
+    }
+
+    #txt-post {
+      margin-top: 1vh;
+      margin-bottom: 1vh;
+      margin-right: 1vh;
+      margin-left: 1vh;
+      width: 20%;
+      height: 4%;
+    }
+
+    #font-comb {
+      color: black;
+      font-size: 2vh;
+    }
+
+    #text-dir {
+      margin-left: 4vh;
+    }
+
+    #text-dir2 {
+      margin-left: 8vh;
+    }
 
 }
-.tam-div {
-
-color: black;
-text-align: left;
-}
-#font-local{  
-  font-size: 3vh;
-  
-}
-#txt-posto {
-  font: normal 3.5vh "Century Gothic";
-  margin-top: 15vh;
-
-}
-
-.logo-posto {
-  width: 20vw;
-  border : 1.5px solid orange;
-  
-
-}
-
-.tam-div2 {
-  margin-top: 0.75vh;
-  
-
-}
-
-.titulo {
-  float: right;
-  margin-right: 10vw;
-  font-size: 3.5vh;
-  color: orange;
-  
-  
-}
-
-#font-local2 {
-  color: black;
-  font-size: 3vh;
-  
-}
-#mel-ben {
-  font-size: 3vh;
-}
-
-#Filtros {
-  font-size: 2.5vh;
-  margin-top:2vh;
-  
-}
-
-#txt-post {
-  margin-top: 1vh;
-  margin-bottom: 1vh;
-  margin-right: 1vh;
-  margin-left: 1vh;
-  width: 20%;
-  height: 4%;
-}
-
-#font-comb {
-  color: black;
-  font-size: 2vh;
-}
-
-#text-dir {
-  margin-left: 4vh;
-}
-
-#text-dir2 {
-  margin-left: 8vh;
-}
-
-  }
 
