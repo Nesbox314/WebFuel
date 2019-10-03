@@ -8,9 +8,9 @@
         <h1> Entrar </h1>
         <form action="efetuaLogin.php" method="POST">
             <div class="inputs">
-                <input required pattern=".+@+" type="text" name="username" placeholder="Email:">
+                <input type="text" name="email" placeholder="Email:">
             </div>
-            <div class="inputs" name="password">
+            <div class="inputs">
                 <input required type="password" name="password" placeholder="Senha:">
             </div>
             <div >
