@@ -1,3 +1,0 @@
-<?php
-    //ARQUIVO DE PHP DA HOMEPAGE AQUI
-?>
