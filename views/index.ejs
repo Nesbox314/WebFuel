@@ -1,6 +1,6 @@
 <html>
 <head>
-<title><%= nome %></title>
+<title>WebFuel</title>
 
 <link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen" />
 <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -28,10 +28,11 @@
     <div class="tam-div" style="background-color: orange" >
         <div id="mel-ben">Melhores Custo x Benefício</div>
         
+        <% for (var i = 0; i < Object.keys(datasetresult).length; i++) { %>
         <div class="tam-div2" style="background-color: orange" >
             <div style="background-color: white">
                 <img class="logo-posto" src="images/shell-logo.png">
-                <div class="titulo">Auto Posto Gasolinez
+                <div class="titulo"><%= datasetresult[i].nome %>
                     <div>
                         <img id="local" src="images/estrela.svg">
                         <span id="font-local2">4,5</span>
@@ -53,82 +54,7 @@
                 
             </div>
         </div>
-
-        <div class="tam-div2" style="background-color: orange" >
-            <div style="background-color: white">
-                <img class="logo-posto" src="images/ipiranga-logo.png"></img>
-                <div class="titulo">Auto Posto Litoral
-                    <div>
-                        <img id="local" src="images/estrela.svg"></img>
-                        <span id="font-local2">4,5</span>
-                        <img id="local" src="images/localização.svg"></img>
-                        <span id="font-local2">2,2 km de você</span>
-                    </div>
-                    <div id= "font-comb" style="background-color: rgb(231, 231, 231)">
-                       <div>
-                           <span>Gasolina C: 3,59</span><span id="text-dir"> GNV: NA</span>
-                        </div>
-                        <div>
-                            <span>Gasolina A: 3,89</span><span id="text-dir"> Diesel S10: NA</span>
-                         </div>
-                         <div>
-                            <span>Etanol: 3,89</span><span id="text-dir2"> Diesel S500: NA</span>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="tam-div2" style="background-color: orange" >
-            <div style="background-color: white">
-                <img class="logo-posto" src="images/buffon-logo.png"></img>
-                <div class="titulo">Auto Posto Potencial
-                    <div>
-                        <img id="local" src="images/estrela.svg"></img>
-                        <span id="font-local2">4,5</span>
-                        <img id="local" src="images/localização.svg"></img>
-
-                        <span id="font-local2">5,3 km de você</span>
-                    </div>
-                    <div id= "font-comb" style="background-color: rgb(231, 231, 231)">
-                       <div>
-                           <span>Gasolina C: 3,59</span><span id="text-dir"> GNV: NA</span>
-                        </div>
-                        <div>
-                            <span>Gasolina A: NA</span><span id="text-dir"> Diesel S10: 2,65</span>
-                         </div>
-                         <div>
-                            <span>Etanol: 2,63</span><span id="text-dir2"> Diesel S500: NA</span>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="tam-div2" style="background-color: orange" >
-            <div style="background-color: white">
-                <img class="logo-posto" src="images/petrobras-logo.png"></img>
-                <div class="titulo">Auto Posto Power
-                    <div>
-                        <img id="local" src="images/estrela.svg"></img>
-                        <span id="font-local2">4,5</span>
-                        <img id="local" src="images/localização.svg"></img>
-                        <span id="font-local2">6,3 km de você</span>
-                    </div>
-                    <div id= "font-comb" style="background-color: rgb(231, 231, 231)">
-                       <div>
-                           <span>Gasolina C: 3,99</span><span id="text-dir"> GNV: NA</span>
-                        </div>
-                        <div>
-                            <span>Gasolina A: 3,89</span><span id="text-dir"> Diesel S10: 2,75</span>
-                         </div>
-                         <div>
-                            <span>Etanol: NA</span><span id="text-dir2"> Diesel S500: NA</span>
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <% } %>
     </div>
 
     
