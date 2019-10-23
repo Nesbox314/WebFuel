@@ -34,6 +34,10 @@ router.get('/cadastroUsuario', function(req, res, next){
   res.render('cadastroUsuario');
 });
 
+router.get('/cadastroPostos', function(req, res, next){
+  res.render('cadastroPostos');
+});
+
 /*router.get('/postos', function(req, res, next){
   connection.query('SELECT * FROM postos', function(error, results, fields){
   console.log(results);
