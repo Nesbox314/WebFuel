@@ -6,6 +6,9 @@ const port = 3005; //porta padrão
 const mysql = require('mysql');
 const path = require('path');
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 const connection = mysql.createConnection({
   host     : 'localhost',
   port     :  3306,
@@ -13,9 +16,6 @@ const connection = mysql.createConnection({
   password : '',
   database : 'webfuel'
 });
-
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
 
 //inicia o servidor
 app.listen(port);
@@ -55,5 +55,15 @@ router.get('/cadastroPostos', function(req, res, next){
     })
   });
 });*/
+
+router.post('/efetuaCadastroPostos', (req, res) =>{
+  const nome = req.body.nome.substring(0, 160);
+  const cnpj = req.body.CNPJ.substring(0, 160);
+  const foto = req.body.foto.substring(0, 160);
+  console.log(nome);
+  console.log(cnpj);
+  console.log(foto);
+  connection.query(`INSERT INTO postos(nome, cnpj, foto) VALUES('${nome}','${cnpj}', '${foto}')`, res);
+});
 
 module.exports = router;

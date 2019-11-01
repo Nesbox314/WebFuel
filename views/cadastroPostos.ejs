@@ -2,10 +2,17 @@
     <head>
     </head>
     <body>
-        <form action="" method="POST">
-                <input type="text" name="nome" placeholder="Nome do posto:" required>
-                <input type="file" name="foto" placeholder="Foto da logo do posto:" required>
-                <input type="text" name="cnpj" placeholder="CNPJ:" required>
+        <form action="/efetuaCadastroPostos" method="POST">
+            <div class="inputs">
+                <input type="text" name="nome" placeholder="Nome do posto:">
+            </div>
+            <div class="inputs">
+                <input type="file" name="foto" placeholder="Adicione aqui a foto da logo:">
+            </div>
+            <div class="inputs">
+                <input type="text" name="CNPJ" placeholder="CNPJ:">
+            </div>
+            <input type="submit">
         </form>
     </body>
 </html>
