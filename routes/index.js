@@ -34,27 +34,19 @@ router.get('/cadastroUsuario', function(req, res, next){
   res.render('cadastroUsuario');
 });
 
+
 router.get('/cadastroPostos', function(req, res, next){
   res.render('cadastroPostos');
 });
 
-/*router.get('/postos', function(req, res, next){
-  connection.query('SELECT * FROM postos', function(error, results, fields){
-  console.log(results);
-  res.render('index', {
-    datasetresult: results
-      nome: results.nome,
-      foto: results.foto,
-      avaliacao: results.avaliacao,
-      precoGasolinaComum: results.precoGasolinaComum,
-      precoGasolinaAditivada: results.precoGasolinaAditivada,
-      precoEtanol: results.precoEtanol,
-      precoGnv: results.precoGnv,
-      precoDieselS10: results.precoDieselS10,
-      precoDieselS500: results.precoDieselS500
-    })
-  });
-});*/
+router.get('/postos', function (req, res) {
+  connection.query('SELECT * FROM postos', function (error, results, fields) {
+      res.render('index', { 
+        title: 'Render by app.get',
+        datasetresult: results
+      });
+    });
+});
 
 router.post('/efetuaCadastroPostos', (req, res) =>{
   const nome = req.body.nome.substring(0, 160);
