@@ -1,18 +1,27 @@
 <html>
     <head>
+          <link rel="stylesheet" type="text/css" href="../public/stylesheets/cadastroPostos.css" media="screen" />
     </head>
     <body>
-        <form action="/efetuaCadastroPostos" method="POST">
+        <form action="/efetuaCadastroPostos" method="POST" id="divCentral">
+            
+             <h1>Cadastre seu <br> Estabelecimento </h1>
+            
             <div class="inputs">
                 <input type="text" name="nome" placeholder="Nome do posto:">
             </div>
-            <div class="inputs">
-                <input type="file" name="foto" placeholder="Adicione aqui a foto da logo:">
-            </div>
+            
+               
             <div class="inputs">
                 <input type="text" name="CNPJ" placeholder="CNPJ:">
             </div>
-            <input type="submit">
+            
+            <div >
+                <input type="file" name="foto" placeholder="Adicione aqui a foto da logo:">
+            </div>
+            
+            <input id="button" type="submit">
+            
         </form>
     </body>
 </html>
