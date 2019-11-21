@@ -19,7 +19,6 @@ const connection = mysql.createConnection({
 
 //inicia o servidor
 app.listen(port, '0.0.0.0');
-console.log('API funcionando!');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
