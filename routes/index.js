@@ -10,7 +10,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 const connection = mysql.createConnection({
-  host     : '10.8.145.197',
+  host     : 'localhost',
   port     :  3306,
   user     : 'root',
   password : '',
@@ -26,10 +26,28 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next){
+  let createTodos = `create table if not exists usuarios(
+    id int(11) primary key auto_increment,
+    username varchar(100),
+    password varchar(100),
+    email varchar(100)
+  )`;
+
+  connection.query(createTodos, function(err, results, fields) {});
+  
   res.render('login');
 });
 
 router.get('/cadastroUsuario', function(req, res, next){
+  let createTodos = `create table if not exists usuarios(
+    id int(11) primary key auto_increment,
+    username varchar(100),
+    password varchar(100),
+    email varchar(100)
+  )`;
+
+  connection.query(createTodos, function(err, results, fields) {});
+
   res.render('cadastroUsuario');
 });
 
@@ -39,6 +57,22 @@ router.get('/cadastroPostos', function(req, res, next){
 });
 
 router.get('/postos', function (req, res) {
+  let createTodos = `create table if not exists postos(
+    id int(100) primary key auto_increment,
+    nome varchar(150)not null,
+    foto longblob,
+    avaliacao float,
+    precoGasolinaComum float,
+    precoGasolinaAditivada float,
+    precoEtanol float,
+    precoGnv float,
+    precoDieselS10 float,
+    precoDieselS500 float,
+    cnpj varchar(100)
+)`;
+
+  connection.query(createTodos, function(err, results, fields) {});
+
   connection.query('SELECT * FROM postos', function (error, results, fields) {
       res.render('index', { 
         title: 'Render by app.get',
@@ -48,6 +82,22 @@ router.get('/postos', function (req, res) {
 });
 
 router.post('/efetuaCadastroPostos', (req, res) =>{
+  let createTodos = `create table if not exists postos(
+    id int(100) primary key auto_increment,
+    nome varchar(150)not null,
+    foto longblob,
+    avaliacao float,
+    precoGasolinaComum float,
+    precoGasolinaAditivada float,
+    precoEtanol float,
+    precoGnv float,
+    precoDieselS10 float,
+    precoDieselS500 float,
+    cnpj varchar(100)
+  )`;
+
+  connection.query(createTodos, function(err, results, fields) {});
+
   const nome = req.body.nome.substring(0, 160);
   const cnpj = req.body.CNPJ.substring(0, 160);
   const foto = req.body.foto.substring(0, 160);
