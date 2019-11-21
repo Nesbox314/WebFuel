@@ -10,7 +10,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 const connection = mysql.createConnection({
-  host     : 'localhost',
+  host     : '10.8.145.197',
   port     :  3306,
   user     : 'root',
   password : '',
@@ -18,7 +18,7 @@ const connection = mysql.createConnection({
 });
 
 //inicia o servidor
-app.listen(port);
+app.listen(port, '0.0.0.0');
 console.log('API funcionando!');
 
 /* GET home page. */
@@ -56,6 +56,15 @@ router.post('/efetuaCadastroPostos', (req, res) =>{
   console.log(cnpj);
   console.log(foto);
   connection.query(`INSERT INTO postos(nome, cnpj, foto) VALUES('${nome}','${cnpj}', '${foto}')`, res);
+});
+
+const multer  = require('multer')
+const upload = multer({});
+
+router.post('/file_upload', upload.single('foto'), (req, res, next) => {
+    // encoded has the base64 of your file
+    const encoded = req.file.buffer.toString('base64');
+    console.log(encoded);
 });
 
 module.exports = router;
