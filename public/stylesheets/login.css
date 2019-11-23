@@ -1,10 +1,11 @@
+
 body {
     background-color: orange;    
 }
 
 h1{
     color: white;
-    font-size: 3vh;
+    font-size: 4vh;
     font-family:"Century Gothic";   
 }
 
@@ -16,16 +17,16 @@ h1{
 #divCentral {
     margin: 0 auto;
     background-color: black;
-    margin-top: 15vh;
+    margin-top: 12vh;
     border-radius: 5px;
-    width: 30%;
+    width: 40%;
     padding-top: 3%;
     text-align: center;
 }
 
 input {
     border-radius: 5%;
-    height: 4vh;
+    height: 6vh;
     width: 80%;
     border-radius: 2px;
     border-style:none;
@@ -39,12 +40,14 @@ input {
 
 #button {
   margin-top: 1vh;;
-  margin-bottom: 3vh;
+  margin-bottom: 6vh;
   padding: 1vh;
-  width:10vh; 
+  width:15vh; 
+  height:6vh;
   text-align: center; 
   border-radius: 10px;
   font-family:"Century Gothic";
+  font-size: 20px;
   background-color: white;
   border-style:none;  
 } 
@@ -54,59 +57,145 @@ input {
     color: white;
 }
  
-
-
-
 body {
     background-color: orange;
 }
 
+#button {
+    text-align: center;  
+  
+  }
+
+/*-----------------responsividade-------------------*/
 
 
-
-
-
-
-
-
-
-
-
-
-/*-----------------responsividade-------------------
-
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 900px) {
+    * {
+        font-size: 20px; 
+        font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
     #divCentral {
         margin: 0 auto;
         background-color: black;
-        margin-top: 30vh;
-        width: 85%;
+        margin-top:4vh;
+        height: 70%;
+        width: 70%;
         }
+    #img{
+        height: 30%; 
+        }
+        
+    input {
+        border-radius: 5%;
+        height: 6vh;
+        width: 80%;
+        border-radius: 2px;
+        border-style:none;
+        padding: 8px;
+    }
+
+    .inputs {
+        padding-top: 4%;
+        padding-bottom: 5%; 
+    }
+
+    #button {
+    margin-top: 1vh;;
+    margin-bottom: 1vh;
+    padding: 1vh;
+    width:15vh; 
+    text-align: center; 
+    border-radius: 10px;
+    font-family:"Century Gothic";
+    background-color: white;
+    border-style:none;  
+    } 
 }
 
-#button {
-  text-align: center;  
+@media only screen and (max-width: 700px) {
+    * {
+        font-size: 20px; 
+        font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    #divCentral {
+        margin: 0 auto;
+        background-color: black;
+        margin-top:4vh;
+        height: 80%;
+        width: 80%;
+        }
+    #img{
+        height: 30%; 
+        }
+        
+    input {
+        border-radius: 5%;
+        height: 6vh;
+        width: 80%;
+        border-radius: 2px;
+        border-style:none;
+        padding: 8px;
+    }
 
+    .inputs {
+        padding-top: 4%;
+        padding-bottom: 5%; 
+    }
+
+    #button {
+    margin-top: 10%;;
+    margin-bottom: 1vh;
+    padding: 1vh;
+    width:15vh; 
+    text-align: center; 
+    border-radius: 10px;
+    font-family:"Century Gothic";
+    background-color: white;
+    border-style:none;  
+    } 
 }
+
 
 @media only screen and (max-height: 380px) {
+    * {
+        font-size: 10px; 
+        font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
     #divCentral {
-       margin: 0 auto;
-       background-color: black;
-       height:175px; 
-     }
+        margin: 0 auto;
+        background-color: black;
+        margin-top:4vh;
+        height: 80%;
+        width: 80%;
+        }
+    #img{
+        height: 30%; 
+        }
+        
     input {
+        border-radius: 5%;
+        height: 6vh;
+        width: 80%;
+        border-radius: 2px;
+        border-style:none;
+        padding: 8px;
+    }
 
-       height: 25px;
-
-     }
     .inputs {
-       padding-top: 25px;
-       padding-bottom: 10px;;
-
-
+        padding-top: 4%;
+        padding-bottom: 5%; 
     }
 
-    }
+    #button {
+    margin-top: 1vh;;
+    margin-bottom: 1vh;
+    padding: 1vh;
+    width:15vh; 
+    text-align: center; 
+    border-radius: 10px;
+    font-family:"Century Gothic";
+    background-color: white;
+    border-style:none;  
+    } 
 
-*/
+    }
