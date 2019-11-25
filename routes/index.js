@@ -96,10 +96,9 @@ router.get('/postos', function (req, res) {
 });
 
 router.post('/efetuaCadastroPostos', (req, res) =>{
-  console.log(req);
 
-  var nome = null;
-  var cnpj = null;
+  var nome = req.body.nome.substring(0, 160);
+  var cnpj = req.body.cnpj.substring(0, 160);
   
   let createTodos = `create table if not exists postos(
     id int(100) primary key auto_increment,
@@ -117,15 +116,14 @@ router.post('/efetuaCadastroPostos', (req, res) =>{
 
   connection.query(createTodos, function(err, results, fields) {}).end();
   
-
   upload(req, res, (err) => {
+    console.log(req)
     if(err){
       res.render('cadastroPostos', {
         msg: err
       });
     } else {
-      console.log(req.file);
-      connection.query(`INSERT INTO postos(nome, cnpj, foto) VALUES('${nome}','${cnpj}', '${req.file.filename}')`, res).end();
+      connection.query(`INSERT INTO postos(nome, cnpj, foto) VALUES('${nome}','${cnpj}', 'null')`, res).end();
       res.render('cadastroPostos');
     }
   });
