@@ -93,13 +93,10 @@ router.get('/postos', function (req, res) {
         datasetresult: results
       });
     }).end();
+
 });
 
-router.post('/efetuaCadastroPostos', (req, res) =>{
-
-  var nome = req.body.nome.substring(0, 160);
-  var cnpj = req.body.cnpj.substring(0, 160);
-  
+router.post('/efetuaCadastroPostos', (req, res) =>{ 
   let createTodos = `create table if not exists postos(
     id int(100) primary key auto_increment,
     nome varchar(150)not null,
@@ -114,16 +111,43 @@ router.post('/efetuaCadastroPostos', (req, res) =>{
     cnpj varchar(100)
   )`;
 
-  connection.query(createTodos, function(err, results, fields) {}).end();
+  connection.query(createTodos, function(err, results, fields) {});
   
+  var nome = req.body.nome.substring(0, 160);
+  var cnpj = req.body.cnpj.substring(0, 160);
+  
+  connection.query(`INSERT INTO postos(nome, cnpj) VALUES('${nome}', '${cnpj}')`, function(err, results, fields) {
+    console.log(results.insertId);
+  });
+
+  res.render('uploadImage');
+});
+
+router.post('/efetuaUploadImagem', (req, res) =>{  
+
+  let createTodos = `create table if not exists postos(
+    id int(100) primary key auto_increment,
+    nome varchar(150)not null,
+    foto varchar(1000),
+    avaliacao float,
+    precoGasolinaComum float,
+    precoGasolinaAditivada float,
+    precoEtanol float,
+    precoGnv float,
+    precoDieselS10 float,
+    precoDieselS500 float,
+    cnpj varchar(100)
+  )`;
+
+  connection.query(createTodos, function(err, results, fields) {});
+
   upload(req, res, (err) => {
-    console.log(req)
     if(err){
-      res.render('cadastroPostos', {
+      res.send({
         msg: err
       });
     } else {
-      connection.query(`INSERT INTO postos(nome, cnpj, foto) VALUES('${nome}','${cnpj}', 'null')`, res).end();
+      connection.query(`UPDATE postos set foto = '${req.file.filename}' where id = )`, res).end();
       res.render('cadastroPostos');
     }
   });
