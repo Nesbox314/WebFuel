@@ -5,9 +5,23 @@ const bodyParser = require('body-parser');
 const port = 3005; //porta padrão
 const mysql = require('mysql');
 const path = require('path');
+const multer = require('multer');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(bodyParser.json());
+
+const storage = multer.diskStorage({
+  destination: './public/logopostos/',
+  filename: function(req, file, cb){
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({
+  storage: storage
+}).single('foto');
 
 const connection = mysql.createConnection({
   host     : 'localhost',
@@ -46,7 +60,7 @@ router.get('/cadastroUsuario', function(req, res, next){
     email varchar(100)
   )`;
 
-  connection.query(createTodos, function(err, results, fields) {});
+  connection.query(createTodos, function(err, results, fields) {}).end();
 
   res.render('cadastroUsuario');
 });
@@ -71,21 +85,25 @@ router.get('/postos', function (req, res) {
     cnpj varchar(100)
 )`;
 
-  connection.query(createTodos, function(err, results, fields) {});
+  connection.query(createTodos, function(err, results, fields) {}).end();
 
   connection.query('SELECT * FROM postos', function (error, results, fields) {
       res.render('index', { 
         title: 'Render by app.get',
         datasetresult: results
       });
-    });
+    }).end();
 });
 
 router.post('/efetuaCadastroPostos', (req, res) =>{
+
+  var nome = req.body.nome.substring(0, 160);
+  var cnpj = req.body.cnpj.substring(0, 160);
+  
   let createTodos = `create table if not exists postos(
     id int(100) primary key auto_increment,
     nome varchar(150)not null,
-    foto longblob,
+    foto varchar(1000),
     avaliacao float,
     precoGasolinaComum float,
     precoGasolinaAditivada float,
@@ -96,24 +114,19 @@ router.post('/efetuaCadastroPostos', (req, res) =>{
     cnpj varchar(100)
   )`;
 
-  connection.query(createTodos, function(err, results, fields) {});
-
-  const nome = req.body.nome.substring(0, 160);
-  const cnpj = req.body.CNPJ.substring(0, 160);
-  const foto = req.body.foto.substring(0, 160);
-  console.log(nome);
-  console.log(cnpj);
-  console.log(foto);
-  connection.query(`INSERT INTO postos(nome, cnpj, foto) VALUES('${nome}','${cnpj}', '${foto}')`, res);
-});
-
-const multer  = require('multer')
-const upload = multer({});
-
-router.post('/file_upload', upload.single('foto'), (req, res, next) => {
-    // encoded has the base64 of your file
-    const encoded = req.file.buffer.toString('base64');
-    console.log(encoded);
+  connection.query(createTodos, function(err, results, fields) {}).end();
+  
+  upload(req, res, (err) => {
+    console.log(req)
+    if(err){
+      res.render('cadastroPostos', {
+        msg: err
+      });
+    } else {
+      connection.query(`INSERT INTO postos(nome, cnpj, foto) VALUES('${nome}','${cnpj}', 'null')`, res).end();
+      res.render('cadastroPostos');
+    }
+  });
 });
 
 module.exports = router;
