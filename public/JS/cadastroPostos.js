@@ -1,10 +1,13 @@
-var formulario = document.getElementById('divCentral');
+var button = document.getElementById('button');
 
-formulario.onsubmit = function(){
-   if(!document.getElementById("input[type='text']").value){
-      alert("Campo nome vazio!");
+button.onclick = function(){
+    console.log(document.getElementsByName("nome"))
+   if(!document.getElementsByName("nome").value){
+      window.alert("Campo nome vazio!");
       return false;
    }
-   
-   alert("ok");
+
+var formulario = document.getElementById("divCentral")
+formulario.submit()
+
 }
