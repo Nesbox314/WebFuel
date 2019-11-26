@@ -1,5 +1,3 @@
-/*---tela interia-------*/
-
 body {
     background-color: orange;    
 }
@@ -67,7 +65,7 @@ body {
   
   }
 
-  /*------------------------responsividade altura grande-------------------------*/
+  /*------------------------responsividade altura -------------------------*/
 
 @media only screen and (max-height: 450px) {
   
@@ -79,7 +77,7 @@ body {
 
     #img{
         
-        height: 23%; 
+        height: 80px; 
     }
 
     #divCentral {
