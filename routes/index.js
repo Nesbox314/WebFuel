@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const app = express();         
 const bodyParser = require('body-parser');
-const port = 3000; //porta padrão
+const port = 3005; //porta padrão
 const mysql = require('mysql');
 const path = require('path');
 const multer = require('multer');
@@ -10,18 +10,7 @@ const multer = require('multer');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.json());
 
-const storage = multer.diskStorage({
-  destination: './public/logopostos/',
-  filename: function(req, file, cb){
-    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-  }
-});
-
-const upload = multer({
-  storage: storage
-}).single('foto');
 
 const connection = mysql.createConnection({
   host     : 'localhost',
@@ -31,6 +20,7 @@ const connection = mysql.createConnection({
   database : 'webfuel'
 });
 
+console.log(connection);
 //inicia o servidor
 app.listen(port, '0.0.0.0');
 
@@ -60,7 +50,7 @@ router.get('/cadastroUsuario', function(req, res, next){
     email varchar(100)
   )`;
 
-  connection.query(createTodos, function(err, results, fields) {}).end();
+  connection.query(createTodos, function(err, results, fields) {});
 
   res.render('cadastroUsuario');
 });
@@ -88,12 +78,12 @@ router.get('/postos', function (req, res) {
   connection.query(createTodos, function(err, results, fields) {});
 
   connection.query('SELECT * FROM postos', function (error, results, fields) {
-    console.log(error);
+    console.log(error)
       res.render('index', { 
         title: 'Render by app.get',
         datasetresult: results
       });
-    }).end();
+    })
 });
 
 router.post('/efetuaCadastroPostos', (req, res) =>{ 
@@ -147,10 +137,21 @@ router.post('/efetuaUploadImagem', (req, res) =>{
         msg: err
       });
     } else {
-      connection.query(`UPDATE postos set foto = '${req.file.filename}' where id = )`, res).end();
+      connection.query(`UPDATE postos set foto = '${req.file.filename}' where id = )`, res);
       res.render('cadastroPostos');
     }
   });
 });
+
+const storage = multer.diskStorage({
+  destination: './public/logopostos/',
+  filename: function(req, file, cb){
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({
+  storage: storage
+}).single('foto');
 
 module.exports = router;

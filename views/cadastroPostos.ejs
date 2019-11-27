@@ -1,6 +1,13 @@
 <html>
     <head>
-          <link rel="stylesheet" type="text/css" href="stylesheets/cadastroPostos.css" media="screen" />
+          <link rel="stylesheet" type="text/css" href="stylesheets/cadastroPostos.css" media="screen" /> 
+            <script type="text/javascript" src="JS/jquery-3.3.1.min.js"></script>
+            <script type="text/javascript" src="JS/jquery.mask.min.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#cnpj").mask("00.000.000/0000-00")
+                })
+            </script>
     </head>
     <body>
         <form action="/efetuaCadastroPostos" method="POST" id="divCentral">
@@ -8,15 +15,19 @@
             <h1>Cadastre seu <br> Estabelecimento </h1>
             
             <div class="inputs">
-                <input type="text" name="nome" placeholder="Nome do posto:">
+                <input type="text" name="nome" id="nome" placeholder="Nome do posto:" required>
             </div>
         
             <div class="inputs">
-                <input type="text" name="cnpj" placeholder="CNPJ:">
+                <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ:" onchange="validarCNPJ()" required>
+                
             </div>
             
             <input id="button" type="submit">
             
         </form>
+    <script type="text/javascript" src="JS/cadastroPostos.js"></script>
     </body>
+    
+
 </html>
