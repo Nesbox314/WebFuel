@@ -10,18 +10,7 @@ const multer = require('multer');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.json());
 
-const storage = multer.diskStorage({
-  destination: './public/logopostos/',
-  filename: function(req, file, cb){
-    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-  }
-});
-
-const upload = multer({
-  storage: storage
-}).single('foto');
 
 const connection = mysql.createConnection({
   host     : 'localhost',
@@ -89,7 +78,7 @@ router.get('/postos', function (req, res) {
   connection.query(createTodos, function(err, results, fields) {});
 
   connection.query('SELECT * FROM postos', function (error, results, fields) {
-    console.log(error);
+    console.log(error)
       res.render('index', { 
         title: 'Render by app.get',
         datasetresult: results
@@ -153,5 +142,16 @@ router.post('/efetuaUploadImagem', (req, res) =>{
     }
   });
 });
+
+const storage = multer.diskStorage({
+  destination: './public/logopostos/',
+  filename: function(req, file, cb){
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({
+  storage: storage
+}).single('foto');
 
 module.exports = router;
