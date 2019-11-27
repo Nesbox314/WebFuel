@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 const app = express();         
 const bodyParser = require('body-parser');
-const port = 3000; //porta padrão
+const port = 3005; //porta padrão
 const mysql = require('mysql');
 const path = require('path');
 const multer = require('multer');
@@ -31,6 +31,7 @@ const connection = mysql.createConnection({
   database : 'webfuel'
 });
 
+console.log(connection);
 //inicia o servidor
 app.listen(port, '0.0.0.0');
 
@@ -60,7 +61,7 @@ router.get('/cadastroUsuario', function(req, res, next){
     email varchar(100)
   )`;
 
-  connection.query(createTodos, function(err, results, fields) {}).end();
+  connection.query(createTodos, function(err, results, fields) {});
 
   res.render('cadastroUsuario');
 });
@@ -93,7 +94,7 @@ router.get('/postos', function (req, res) {
         title: 'Render by app.get',
         datasetresult: results
       });
-    }).end();
+    })
 });
 
 router.post('/efetuaCadastroPostos', (req, res) =>{ 
@@ -147,7 +148,7 @@ router.post('/efetuaUploadImagem', (req, res) =>{
         msg: err
       });
     } else {
-      connection.query(`UPDATE postos set foto = '${req.file.filename}' where id = )`, res).end();
+      connection.query(`UPDATE postos set foto = '${req.file.filename}' where id = )`, res);
       res.render('cadastroPostos');
     }
   });
