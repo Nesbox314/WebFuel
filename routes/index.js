@@ -10,18 +10,7 @@ const multer = require('multer');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.json());
 
-const storage = multer.diskStorage({
-  destination: './public/logopostos/',
-  filename: function(req, file, cb){
-    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-  }
-});
-
-const upload = multer({
-  storage: storage
-}).single('foto');
 
 const connection = mysql.createConnection({
   host     : 'localhost',
@@ -31,6 +20,7 @@ const connection = mysql.createConnection({
   database : 'webfuel'
 });
 
+console.log(connection);
 //inicia o servidor
 app.listen(port, '0.0.0.0');
 
@@ -60,7 +50,7 @@ router.get('/cadastroUsuario', function(req, res, next){
     email varchar(100)
   )`;
 
-  connection.query(createTodos, function(err, results, fields) {}).end();
+  connection.query(createTodos, function(err, results, fields) {});
 
   res.render('cadastroUsuario');
 });
@@ -85,21 +75,18 @@ router.get('/postos', function (req, res) {
     cnpj varchar(100)
 )`;
 
-  connection.query(createTodos, function(err, results, fields) {}).end();
+  connection.query(createTodos, function(err, results, fields) {});
 
   connection.query('SELECT * FROM postos', function (error, results, fields) {
+    console.log(error)
       res.render('index', { 
         title: 'Render by app.get',
         datasetresult: results
       });
-    }).end();
+    })
 });
 
-router.post('/efetuaCadastroPostos', (req, res) =>{
-
-  var nome = req.body.nome.substring(0, 160);
-  var cnpj = req.body.cnpj.substring(0, 160);
-  
+router.post('/efetuaCadastroPostos', (req, res) =>{ 
   let createTodos = `create table if not exists postos(
     id int(100) primary key auto_increment,
     nome varchar(150)not null,
@@ -114,19 +101,57 @@ router.post('/efetuaCadastroPostos', (req, res) =>{
     cnpj varchar(100)
   )`;
 
-  connection.query(createTodos, function(err, results, fields) {}).end();
+  connection.query(createTodos, function(err, results, fields) {});
   
+  var nome = req.body.nome.substring(0, 160);
+  var cnpj = req.body.cnpj.substring(0, 160);
+  
+  connection.query(`INSERT INTO postos(nome, cnpj) VALUES('${nome}', '${cnpj}')`, function(err, results, fields) {
+    console.log(results.insertId);
+  });
+
+  res.render('uploadImage');
+});
+
+router.post('/efetuaUploadImagem', (req, res) =>{  
+
+  let createTodos = `create table if not exists postos(
+    id int(100) primary key auto_increment,
+    nome varchar(150)not null,
+    foto varchar(1000),
+    avaliacao float,
+    precoGasolinaComum float,
+    precoGasolinaAditivada float,
+    precoEtanol float,
+    precoGnv float,
+    precoDieselS10 float,
+    precoDieselS500 float,
+    cnpj varchar(100)
+  )`;
+
+  connection.query(createTodos, function(err, results, fields) {});
+
   upload(req, res, (err) => {
-    console.log(req)
     if(err){
-      res.render('cadastroPostos', {
+      res.send({
         msg: err
       });
     } else {
-      connection.query(`INSERT INTO postos(nome, cnpj, foto) VALUES('${nome}','${cnpj}', 'null')`, res).end();
+      connection.query(`UPDATE postos set foto = '${req.file.filename}' where id = )`, res);
       res.render('cadastroPostos');
     }
   });
 });
+
+const storage = multer.diskStorage({
+  destination: './public/logopostos/',
+  filename: function(req, file, cb){
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({
+  storage: storage
+}).single('foto');
 
 module.exports = router;
