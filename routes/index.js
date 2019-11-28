@@ -22,8 +22,30 @@ const connection = mysql.createConnection({
 app.listen(port, '0.0.0.0');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index');
+router.get('/', function (req, res) {
+  let createTodos = `create table if not exists postos(
+    id int(100) primary key auto_increment,
+    nome varchar(150)not null,
+    foto varchar(150),
+    avaliacao float,
+    precoGasolinaComum float,
+    precoGasolinaAditivada float,
+    precoEtanol float,
+    precoGnv float,
+    precoDieselS10 float,
+    precoDieselS500 float,
+    cnpj varchar(100)
+)`;
+
+  connection.query(createTodos, function(err, results, fields) {});
+
+  connection.query('SELECT * FROM postos', function (error, results, fields) {
+    console.log(error)
+      res.render('index', { 
+        title: 'Render by app.get',
+        datasetresult: results
+      });
+    })
 });
 
 router.get('/login', function(req, res, next){
@@ -55,32 +77,6 @@ router.get('/cadastroUsuario', function(req, res, next){
 
 router.get('/cadastroPostos', function(req, res, next){
   res.render('cadastroPostos');
-});
-
-router.get('/postos', function (req, res) {
-  let createTodos = `create table if not exists postos(
-    id int(100) primary key auto_increment,
-    nome varchar(150)not null,
-    foto varchar(150),
-    avaliacao float,
-    precoGasolinaComum float,
-    precoGasolinaAditivada float,
-    precoEtanol float,
-    precoGnv float,
-    precoDieselS10 float,
-    precoDieselS500 float,
-    cnpj varchar(100)
-)`;
-
-  connection.query(createTodos, function(err, results, fields) {});
-
-  connection.query('SELECT * FROM postos', function (error, results, fields) {
-    console.log(error)
-      res.render('index', { 
-        title: 'Render by app.get',
-        datasetresult: results
-      });
-    })
 });
 
 router.post('/efetuaCadastroPostos', (req, res) =>{ 
