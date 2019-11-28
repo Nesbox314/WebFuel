@@ -1,3 +1,13 @@
+function onSubmitForm(e) {
+
+    if (!validarCNPJ(document.getElementById('cnpj').value)) {
+        alert('CNPJ inválido!');
+        return false;
+    }
+
+    return true;
+}
+
 function validarCNPJ(cnpj) {
     
     console.log(validarCNPJ)
