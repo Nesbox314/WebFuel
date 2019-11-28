@@ -1,0 +1,296 @@
+body {
+    background-color: orange;    
+}
+
+#output{
+    margin-top: 10px;
+    height: 120px;
+    float:center;
+}
+
+h1{
+    color: white;
+    font-size: 4vh;
+    font-family:"Century Gothic";   
+}
+
+h2{
+    color: white;
+    font-size: 3vh;
+    font-family:"Century Gothic";   
+}
+
+#img{
+    
+    height: 15%; 
+}
+
+#divCentral {
+    margin: 0 auto;
+    background-color: black;
+    margin-top: 12vh;
+    border-radius: 5px;
+    width: 40%;
+    padding-top: 3%;
+    text-align: center;
+}
+
+input {
+    border-radius: 5%;
+    height: 30px;
+    width: 80%;
+    border-radius: 2px;
+    border-style:none;
+    padding: 8px;
+}
+
+.inputs {
+    padding-top: 4%;
+    padding-bottom: 5%; 
+}
+
+#button {
+    margin-top: 1vh;;
+    margin-bottom: 6vh;
+    padding: 1vh;
+    width:15vh; 
+    height:30px;
+    text-align: center; 
+    border-radius: 10px;
+    font-family:"Century Gothic";
+    font-size: 20px;
+    background-color: white;
+    border-style:none;  
+} 
+
+#button:hover{
+    background-color: darkorange;
+    color: white;
+}
+ 
+body {
+    background-color: orange;
+}
+
+#button {
+    text-align: center;  
+  
+  }
+
+  /*------------------------responsividade altura -------------------------*/
+
+@media only screen and (max-height: 450px) {
+  
+
+    h1{
+        font-size: 25px; 
+
+    }
+
+    #img{
+        
+        height: 80px; 
+    }
+
+    #divCentral {
+        margin: 0 auto;
+        background-color: black;
+        margin-top: 12vh;
+        width: 40%;
+        height: 33  0px;
+        padding-top: 3%;
+     
+    }
+
+    input {
+        height: 30px;
+        width: 80%;
+        padding: 8px;
+    }
+
+
+    #button {
+        margin-top: 1vh;;
+        margin-bottom: 6vh;
+        padding: 1vh;
+        width:60; 
+        height:30px;
+        text-align: center; 
+        font-size: 20px;
+    } 
+}
+
+/*--------------------------responsividade largura grande-----------------------*/
+
+@media only screen and (max-width: 1100px) {
+  
+    h1{
+        color: white;
+        font-size: 27px;  
+    }
+
+    #img{
+        
+        height: 20%; 
+    }
+
+    #divCentral {
+        margin: 0 auto;
+        background-color:black;
+        margin-top: 12vh;
+        width: 550px;     
+        height: ;
+        padding-top: 3%;
+    }
+
+    input {
+        height: 30px;
+        width: 80%;
+        padding: 8px;
+    }
+
+    .inputs {
+        padding-top: 4%;
+        padding-bottom: 5%; 
+    }
+
+    #button {
+    margin-top: 1vh;;
+    margin-bottom: 10vh;
+    padding: 1vh;
+    width:75px; 
+    height:30px;
+    font-size: 15px;
+    } 
+} 
+
+/*------------------------responsividade largura media----------------------------*/
+  
+@media only screen and (max-width: 850px) {
+    *
+    h1{
+        color: white;
+        font-size: 23px;   
+    }
+
+    #img{
+        
+        height: 23%; 
+    }
+
+    #divCentral {
+        margin: 0 auto;
+        background-color:black;
+        margin-top: 12vh;
+        width: 450px;     
+        padding-top: 3%;
+    }
+
+    input {
+        height: 30px;
+        width: 80%;
+        padding: 8px;
+    }
+
+    .inputs {
+        padding-top: 4%;
+        padding-bottom: 5%; 
+    }
+
+    #button {
+        margin-top: 1vh;;
+        margin-bottom: 6vh;
+        padding: 1vh;
+        width:70px; 
+        height:30px;
+        font-size: 15px;
+    } 
+}
+
+/*------------------------responsividade largura pequena---------------------------------*/
+  
+@media only screen and (max-width: 560px) {
+    *
+    h1{
+        color: white;
+        font-size: 20px;  
+    }
+
+    #img{
+        
+        height: 20%; 
+    }
+
+    #divCentral {
+        margin: 0 auto;
+        background-color:black;
+        margin-top: 12vh;
+        width: 300px;     
+        padding-top: 3%;
+    }
+
+    input {
+        height: 30px;
+        width: 80%;
+        padding: 8px;
+    }
+
+    .inputs {
+        padding-top: 4%;
+        padding-bottom: 5%; 
+    }
+
+    #button {
+    margin-top: 1vh;;
+    margin-bottom: 6vh;
+    padding: 1vh;
+    width:60px; 
+    height:30px;
+    font-size: 13px;
+    } 
+}
+
+/* @media only screen and (max-height: 560px) {
+    * {
+        font-size: 10px; 
+        font-family: century 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    #divCentral {
+        margin: 0 auto;
+        background-color:pink;
+        margin-top:4vh;
+        height: 80%;
+        width: 80%;
+        }
+    #img{
+        height: 30%; 
+        }
+        
+    input {
+        border-radius: 5%;
+        height: 6vh;
+        width: 80%;
+        border-radius: 2px;
+        border-style:none;
+        padding: 8px;
+    }
+
+    .inputs {
+        padding-top: 4%;
+        padding-bottom: 5%; 
+    }
+
+    #button {
+    margin-top: 1vh;;
+    margin-bottom: 1vh;
+    padding: 1vh;
+    width:15vh; 
+    text-align: center; 
+    border-radius: 10px;
+    font-family:"Century Gothic";
+    background-color: white;
+    border-style:none;  
+    } 
+
+    } */
+ 
