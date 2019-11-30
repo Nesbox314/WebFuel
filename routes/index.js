@@ -6,6 +6,15 @@ const port = 3005; //porta padrão
 const mysql = require('mysql');
 const path = require('path');
 const multer = require('multer');
+var LocalStorage = require('node-localstorage').LocalStorage;
+localStorage = new LocalStorage('./scratch');
+var jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const { window } = new JSDOM();
+const document = (new JSDOM('')).window;
+global.document = document;
+
+var $ = jQuery = require('jquery')(window);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -37,11 +46,45 @@ router.get('/', function (req, res) {
     cnpj varchar(100)
 )`;
 
+  $(document).ready(function(){
+    $("body").hide();
+  });
+
   connection.query(createTodos, function(err, results, fields) {});
 
   connection.query('SELECT * FROM postos', function (error, results, fields) {
     console.log(error)
       res.render('index', { 
+        title: 'Render by app.get',
+        datasetresult: results
+      });
+    })
+});
+
+router.get('/logged', function (req, res) {
+  let createTodos = `create table if not exists postos(
+    id int(100) primary key auto_increment,
+    nome varchar(150)not null,
+    foto varchar(150),
+    avaliacao float,
+    precoGasolinaComum float,
+    precoGasolinaAditivada float,
+    precoEtanol float,
+    precoGnv float,
+    precoDieselS10 float,
+    precoDieselS500 float,
+    cnpj varchar(100)
+)`;
+
+  $(document).ready(function(){
+    $("body").hide();
+  });
+
+  connection.query(createTodos, function(err, results, fields) {});
+
+  connection.query('SELECT * FROM postos', function (error, results, fields) {
+    console.log(error)
+      res.render('indexLogged', { 
         title: 'Render by app.get',
         datasetresult: results
       });
@@ -55,11 +98,30 @@ router.get('/login', function(req, res, next){
     password varchar(100),
     email varchar(100)
   )`;
-
   connection.query(createTodos, function(err, results, fields) {});
-  
+
   res.render('login');
 });
+
+router.post('/efetuaLogin', function(req, res, next){
+  let createTodos = `create table if not exists usuarios(
+    id int(11) primary key auto_increment,
+    username varchar(100),
+    password varchar(100),
+    email varchar(100)
+  )`;
+  connection.query(createTodos, function(err, results, fields) {});
+
+  var email = req.body.email.substring(0, 160);
+  var password = req.body.password.substring(0, 160);
+
+    if(email == 'admin' && password == 'admin'){
+      res.redirect('/logged');
+    } else {
+      console.log("LOGIN INCORRETO");
+    }
+});
+
 
 router.get('/cadastroUsuario', function(req, res, next){
   let createTodos = `create table if not exists usuarios(
