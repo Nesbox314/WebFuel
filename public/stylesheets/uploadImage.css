@@ -3,10 +3,10 @@ body {
 }
 
 #output{
-    margin-top: 10px;
-    height: 25%;
-    float:center;
-    border-image: space;
+    margin-top: -5px;
+    margin-bottom: -30px;
+    max-width:60% ;
+    float:center;    
 }
 #file{
     margin-top: 1vh;;
@@ -16,7 +16,7 @@ body {
     height:30px;
     text-align: center; 
     border-radius: 08px;
-    font-family:"Century Gothic";
+    font-family:'Open Sans';
     font-size: 15px;
     background-color: darkorange;
     border-style:none;  
@@ -34,14 +34,15 @@ body {
 
 h1{
     color: white;
+    margin-top:0px ;
     font-size: 4vh;
-    font-family:"Century Gothic";   
+    font-family:'Open Sans';   
 }
 
 h2{
     color: white;
     font-size: 3vh;
-    font-family:"Century Gothic";   
+    font-family:'Open Sans';   
 }
 
 #img{
@@ -52,10 +53,10 @@ h2{
 #divCentral {
     margin: 0 auto;
     background-color: black;
-    margin-top: 12vh;
+    margin-top: 4vh;
     border-radius: 5px;
     width: 40%;
-    padding-top: 3%;
+    padding-top: 3%; 
     text-align: center;
 }
 
@@ -74,15 +75,15 @@ input {
 }
 
 #button {
-    margin-top: 1vh;;
+    margin-top: 1vh;
+    padding-top: 3px;
     margin-bottom: 6vh;
-    padding: 1vh;
     width:15vh; 
     height:30px;
     text-align: center; 
     border-radius: 10px;
-    font-family:"Century Gothic";
-    font-size: 20px;
+    font-family:"Open Sans";
+    font-size: 3vh;
     background-color: white;
     border-style:none;  
 } 
@@ -108,6 +109,11 @@ body {
 
     h1{
         font-size: 25px; 
+
+    }
+    
+    h2{
+        font-size: 20px; 
 
     }
 
@@ -163,7 +169,6 @@ body {
         background-color:black;
         margin-top: 12vh;
         width: 550px;     
-        height: ;
         padding-top: 3%;
     }
 
