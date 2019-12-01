@@ -1,26 +1,33 @@
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="stylesheets/uploadImage.css" media="screen" />
-   </head>
-    <body>
-        <form action="/efetuaUploadImagem" method="POST" id="divCentral" enctype="multipart/form-data">
-            <h1>Quase pronto...</h1>
-            <img src="images/logo-fundo-branco.png" id="img"><br>
 
-            <h2>Agora adicione uma imagem de seu posto para te repressentar</h2>
-            <div class="inputs">
-                <input type="file" name="foto" placeholder="Escolha o arquivo:"accept="image/*" onchange="loadFile(event)"/>
-                <img id="output"/>
-            </div>
-            
-            <script>
-                var loadFile = function(event) {
-                var output = document.getElementById('output');
-                output.src = URL.createObjectURL(event.target.files[0]);};
-            </script>
+<head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/uploadImage.css" media="screen" />
+</head>
 
-            <input id="button" type="submit">
-            
-        </form>
-    </body>
+<body>
+    <form action="/efetuaUploadImagem" method="POST" id="divCentral" enctype="multipart/form-data">
+        <h1>Quase pronto...</h1>
+        <img src="images/logo-fundo-branco.png" id="img"><br>
+
+        <h2>Adicione uma imagem para seu posto:<h2>
+                <div class="inputs">
+                    <label id="file" for='type'>Selecionar</label>
+
+                    <input type="file" name="foto" id="type" placeholder="Escolha o arquivo:" accept="image/*"
+                        onchange="loadFile(event)" />
+                    <h2>Demonstrativo:<h2>
+                            <img id="output" />
+                </div>  
+                <script>
+                    var loadFile = function (event) {
+                        var output = document.getElementById('output');
+                        output.src = URL.createObjectURL(event.target.files[0]);
+                    };
+                </script>
+
+                <input id="button" type="submit">
+
+    </form>
+</body>
+
 </html>

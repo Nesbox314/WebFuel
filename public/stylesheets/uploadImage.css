@@ -4,9 +4,33 @@ body {
 
 #output{
     margin-top: 10px;
-    height: 120px;
+    height: 25%;
     float:center;
+    border-image: space;
 }
+#file{
+    margin-top: 1vh;;
+    margin-bottom: 6vh;
+    padding: 1vh;
+    width:15vh; 
+    height:30px;
+    text-align: center; 
+    border-radius: 08px;
+    font-family:"Century Gothic";
+    font-size: 15px;
+    background-color: darkorange;
+    border-style:none;  
+}
+
+#file:hover{
+    background-color: white;
+    color: darkorange;
+}
+
+#type{
+    display: none;
+}
+
 
 h1{
     color: white;
@@ -22,7 +46,7 @@ h2{
 
 #img{
     
-    height: 15%; 
+    height: 17%; 
 }
 
 #divCentral {
