@@ -16,16 +16,19 @@
     </div>
  
     <div class="tam-div" style="background-color: white" >
-        
-        <img id="local" src="images/icone-local.svg">
-    <span id="font-local">Rua: São Paulo, Floresta, Joinville</span>
-    </div>
-        
-    <div class="tam-div"> 
-        <span id="txt-posto"><input type="string" name="txt-posto" id="txt-post"><span id="Filtros">Filtros</span></span>
+     
+    <div>
+        <div>
+            <img id="local" src="images/icone-local.svg">
+            <span id="font-local">Rua: São Paulo, Floresta, Joinville</span>
+        </div>
+            
+        <div class="tam-div"> 
+            <span id="txt-posto"><input type="string" name="txt-posto" id="txt-post"><span id="Filtros">Filtros</span></span>
+        </div>
     </div>
 
-    <div class="tam-div" style="background-color: orange" >
+    <div class="tam-div" style="background-color: orange; top: 100px" >
         <div id="mel-ben">Melhores Custo x Benefício</div>
         
         <% for (var i = 0; i < Object.keys(datasetresult).length; i++) { %>
