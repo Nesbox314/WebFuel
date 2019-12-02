@@ -55,6 +55,32 @@ input {
 }
  
 
+body {
+    background-color: orange;
+}
+
+.inputG {
+    width: 100px;
+    height: 35px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    
+}
+
+.inputC {
+    width: 100px;
+    height: 35px;
+    margin-left: 2px;
+}
+
+.CEP {
+    
+    width: 100px;
+    height: 35px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+}
+
   /*------------------------responsividade altura -------------------------*/
 
 @media only screen and (max-height: 450px) {
