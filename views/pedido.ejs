@@ -1,0 +1,36 @@
+<html>
+    <head>
+          <link rel="stylesheet" type="text/css" href="" media="screen" /> 
+    </head>
+    <body>
+        <form action="/efetuaPedido" method="POST" id="divCentral">
+            
+            <h1>Faça aqui seu pedido:</h1>
+            
+            <h3>Selecione qual combistível você deseja:</h3>
+            <div class="inputs">
+                <select name="tipoCombustivel">
+                    <option value="0">Gasolina comum</option>
+                    <option value="1">Gasolina aditivada</option>
+                    <option value="2">Etanol</option>
+                    <option value="3">Diesel</option>
+                </select>
+            </div>
+        
+            <h3>Onde você está?</h3>
+            <div class="inputs">
+                <input type="text" name="endereco" id="endereco" placeholder="Endereço:" required>
+            </div>
+
+            <h3>De quantos litros você precisa?</h3>
+            <div class="inputs">
+                <input type="number" name="litros" id="litros" placeholder="Litros:" required>
+            </div>
+            
+            <input id="button" type="submit">
+            
+        </form>
+    </body>
+    
+
+</html>

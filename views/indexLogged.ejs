@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>WebFuel</title>
+
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen" />
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta charset="UTF-8">
+</head>
+<body>
+    <div id="div-logo">
+<img id="log-tam" src="images/logo-fundo-branco.png">
+    <span>
+        <a id="entrar" href="/login"><strong>Entrar</strong></a>
+        <!--p>Logado como: </p-->
+    </span>
+    <span>
+        <a id="cadastraPostos" href="/cadastroPostos"><strong>Cadastrar postos</strong></a>
+        <!--p>Logado como: </p-->
+    </span>
+    <span>
+        <a id="pedirCombustivel" href="/cadastroUsuario"><strong>Cadastr</strong></a>
+        <!--p>Logado como: </p-->
+    </span>
+    </div>
+ 
+    <div class="tam-div" style="background-color: white" >
+        
+        <img id="local" src="images/icone-local.svg">
+    <span id="font-local">Rua: São Paulo, Floresta, Joinville</span>
+    </div>
+        
+    <div class="tam-div"> 
+        <span id="txt-posto"><input type="string" name="txt-posto" id="txt-post"><span id="Filtros">Filtros</span></span>
+    </div>
+
+    <div class="tam-div" style="background-color: orange" >
+        <div id="mel-ben">Melhores Custo x Benefício</div>
+        
+        <% for (var i = 0; i < Object.keys(datasetresult).length; i++) { %>
+        <div class="tam-div2" style="background-color: orange" >
+            <div style="background-color: white">
+                <img class="logo-posto" src="logopostos/<%= datasetresult[i].foto %>">
+                <div class="titulo"><%= datasetresult[i].nome %>
+                    <div>
+                        <img id="local" src="images/estrela.svg">
+                        <span id="font-local2"><%= datasetresult[i].avaliacao %></span>
+                        <img id="local" src="images/localização.svg">
+                        <span id="font-local2">2,3 km de você</span>
+                    </div>
+                    <div id= "font-comb" style="background-color: rgb(231, 231, 231)">
+                       <div>
+                           <span>Gasolina C: <%= datasetresult[i].precoGasolinaComum %></span><span id="text-dir"> GNV: <%= datasetresult[i].precoGnv %></span>
+                        </div>
+                        <div>
+                            <span>Gasolina A: <%= datasetresult[i].precoGasolinaAditivada %></span><span id="text-dir"> Diesel S10: <%= datasetresult[i].precoDieselS10 %></span>
+                         </div>
+                         <div>
+                            <span>Etanol: <%= datasetresult[i].precoEtanol %></span><span id="text-dir2"> Diesel S500: <%= datasetresult[i].precoDieselS500 %></span>
+                         </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <% } %>
+    </div>
+
+    
+</body>
+</html>
