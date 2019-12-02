@@ -82,8 +82,8 @@ router.get('/logged', function (req, res) {
   });
 
   connection.query('SELECT * FROM postos', function (error, results, fields) {
-    if(err){
-      console.log(err);
+    if(error){
+      console.log(error);
     }
       res.render('indexLogged', { 
         title: 'Render by app.get',

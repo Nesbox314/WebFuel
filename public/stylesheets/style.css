@@ -15,11 +15,6 @@ h1 {
     height: 10%;
 }
 
-.tam-div {
-  float: left;
-
-}
-
   /* Mobile Styles */
   @media screen and (max-width: 960px) {
       body {
