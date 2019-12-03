@@ -238,7 +238,7 @@ router.post('/efetuaPedido', (req, res) =>{
       console.log(err);
     } else {
       app.set('pedido', results.insertId);
-      res.render('confirmaPedido');
+      res.redirect('/confirmaPedido');
     }
   });
 });
@@ -248,9 +248,15 @@ router.get('/confirmaPedido', (req, res) =>{
     if(err){
       console.log(err);
     }
-    console.log(results);
+    if(results.tipo == 0){
+      var valortotal = results.litros 
+    }
+      res.render('confirmaPedido', { 
+        title: 'Render by app.get',
+        datasetresult: results
+      });
+    })
   });
-});
 
 const storage = multer.diskStorage({
   destination: './public/logopostos/',
