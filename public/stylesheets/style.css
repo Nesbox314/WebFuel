@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:"Open Sans";
 }
 
 h1 {
@@ -11,9 +12,41 @@ h1 {
 }
 
 #div-logo {
+  
     background-color: black;
-    height: 10%;
+    height: 12%;
 }
+
+#entrar{
+  margin-top: 4vh;
+  font-size: 86%;
+  margin-right: 04%;
+  text-decoration: none;
+}
+
+#cadastraPostos{
+  margin-top:  4vh;
+  font-size: 86%;
+  margin-right: 02%;
+  text-decoration: none;
+}
+
+#pedirCombustivel{
+  margin-top:  4vh;
+  font-size: 86%;
+  margin-right: 2%;
+  text-decoration: none;
+}
+
+#sair{
+  padding-left: 20px;
+  border-left-style: solid;
+  margin-top:  4vh;
+  font-size: 86%;
+  margin-right: 2%;
+  text-decoration: none;
+}
+
 
   /* Mobile Styles */
   @media screen and (max-width: 960px) {
@@ -131,7 +164,7 @@ h1 {
     }
 
     #log-tam{
-      height: 95%;
+      height: 100%;
     }
     
     body{
@@ -190,7 +223,8 @@ h1 {
 
     .logo-posto {
       width: 20vw;
-      border : 1.5px solid orange;     
+      border : 1.5px solid orange;   
+      margin-left:4% ;  
     }
 
     .tam-div2 {
