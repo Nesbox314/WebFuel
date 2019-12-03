@@ -15,7 +15,7 @@ h1{
 #divCentral {
     margin: 0 auto;
     background-color: black;
-    margin-top: 12vh;
+    margin-top: 4vh;
     border-radius: 5px;
     width: 40%;
     padding-top: 3%;
@@ -33,8 +33,36 @@ input {
 
 .inputs {
     padding-top: 4%;
-    padding-bottom: 5%; 
+    padding-bottom: 2%; 
 }
+
+
+.inputG {
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+
+}
+
+.inputC {
+
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+
+}
+
+.CEP {
+    
+    margin-top: 15px;
+    width: 150px;
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 2px;
+}
+
 
 #button {
     margin-top: 1vh;
@@ -57,28 +85,6 @@ input {
 
 body {
     background-color: orange;
-}
-
-.inputG {
-    width: 100px;
-    height: 35px;
-    margin-left: 2px;
-    margin-bottom: 2px;
-    
-}
-
-.inputC {
-    width: 100px;
-    height: 35px;
-    margin-left: 2px;
-}
-
-.CEP {
-    
-    width: 100px;
-    height: 35px;
-    margin-left: 2px;
-    margin-bottom: 2px;
 }
 
   /*------------------------responsividade altura -------------------------*/
