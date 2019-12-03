@@ -185,7 +185,7 @@ router.post('/efetuaCadastroPostos', (req, res) =>{
     app.set('fotoId', results.insertId);
   });
 
-  res.render('uploadImage');
+    res.render('uploadImage');
 });
 
 router.post('/efetuaUploadImagem', (req, res) =>{  
@@ -211,19 +211,16 @@ router.post('/efetuaUploadImagem', (req, res) =>{
   });
 
   upload(req, res, (err) => {
-    if(err){
-      res.send({
-        msg: err
-      });
-    } else {
       var idFoto = app.get('fotoId');
       connection.query(`UPDATE postos set foto = '${req.file.filename}' where id = '${idFoto}'`, function(err, results, fields){
         if(err){
           console.log(err);
         }
       });
-      res.render('index');
-    }
+
+      setTimeout(() => {
+        res.redirect('/');
+      }, 2000);
   });
 });
 
@@ -241,9 +238,9 @@ router.post('/efetuaPedido', (req, res) =>{
       console.log(err);
     } else {
       app.set('pedido', results.insertId);
+      res.redirect('/confirmaPedido');
     }
   });
-
 });
 
 router.get('/confirmaPedido', (req, res) =>{
@@ -251,9 +248,15 @@ router.get('/confirmaPedido', (req, res) =>{
     if(err){
       console.log(err);
     }
-    console.log(results);
+    if(results.tipo == 0){
+      var valortotal = results.litros 
+    }
+      res.render('confirmaPedido', { 
+        title: 'Render by app.get',
+        datasetresult: results
+      });
+    })
   });
-});
 
 const storage = multer.diskStorage({
   destination: './public/logopostos/',
