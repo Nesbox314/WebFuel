@@ -185,7 +185,7 @@ router.post('/efetuaCadastroPostos', (req, res) =>{
     app.set('fotoId', results.insertId);
   });
 
-  res.render('uploadImage');
+    res.render('uploadImage');
 });
 
 router.post('/efetuaUploadImagem', (req, res) =>{  
@@ -211,19 +211,16 @@ router.post('/efetuaUploadImagem', (req, res) =>{
   });
 
   upload(req, res, (err) => {
-    if(err){
-      res.send({
-        msg: err
-      });
-    } else {
       var idFoto = app.get('fotoId');
       connection.query(`UPDATE postos set foto = '${req.file.filename}' where id = '${idFoto}'`, function(err, results, fields){
         if(err){
           console.log(err);
         }
       });
-      res.render('index');
-    }
+
+      setTimeout(() => {
+        res.redirect('/');
+      }, 2000);
   });
 });
 
@@ -241,9 +238,9 @@ router.post('/efetuaPedido', (req, res) =>{
       console.log(err);
     } else {
       app.set('pedido', results.insertId);
+      res.render('confirmaPedido');
     }
   });
-
 });
 
 router.get('/confirmaPedido', (req, res) =>{
