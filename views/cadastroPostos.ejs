@@ -1,4 +1,60 @@
 <html>
+
+<head>
+    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="stylesheet" type="text/css" href="stylesheets/cadastroPostos.css" media="screen" />
+    <script type="text/javascript" src="JS/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="JS/jquery.mask.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#cnpj").mask("00.000.000/0000-00")
+        })
+    </script>
+</head>
+
+<body>
+    <form action="/efetuaCadastroPostos" method="POST" id="divCentral">
+        <img src="images/logo-fundo-branco.png" id="img"><br>
+        <h1>Cadastre seu <br> Estabelecimento </h1>
+        <div class="inputs">
+            <input type="text" name="nome" id="nome" placeholder="Nome do posto:" required>
+        </div>
+        <div class="inputs">
+            <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ:" onchange="validarCNPJ()" required>
+        </div>
+        <div class="inputs">
+            <input type="text" name="endereco" id="endereco" placeholder="Endereço:" required>
+    </div>
+    <div>
+            <div>
+                <input type="text" name="CEP" class="CEP" placeholder="CEP: ">
+                <input type="text" name="Num" class="CEP" placeholder="Numero: ">
+            </div>
+        </div>
+    
+    <h1>PREÇOS</h1>
+<div>
+    <div>
+        <input type="text" name="PGC" class="inputG" placeholder="Gasolina Comum">
+        <input type="text" name="PGA" class="inputG" placeholder="Gasolina Aditivada">
+        <input type="text" name="PGA" class="inputG" placeholder="Gasolina Premium">
+    </div>
+</div>
+<div>    
+    <div>
+        <input type="text" name="PGA" class="inputC" placeholder="Diesel">
+        <input type="text" name="PGA" class="inputC" placeholder="Etanol">
+        <input type="text" name="PGA" class="inputC" placeholder="GNV">
+    </div>
+</div>
+    <input id="button" type="submit">
+    
+</form>
+<script type="text/javascript" src="JS/cadastroPostos.js"></script>
+</body>
+
+
+    </form>
     <head>
           <link rel="stylesheet" type="text/css" href="stylesheets/cadastroPostos.css" media="screen" /> 
             <script type="text/javascript" src="JS/jquery-3.3.1.min.js"></script>
@@ -10,48 +66,7 @@
                 
             </script>
     </head>
-    <body>
-        <form action="/efetuaCadastroPostos" method="POST" id="divCentral" onsubmit="return onSubmitForm.call(this, event)">
-            
-            <h1>Cadastre seu <br> Estabelecimento </h1>
-            
-            <div class="inputs">
-                <input type="text" name="nome" id="nome" placeholder="Nome do posto:" required>
-            </div>
-        
-            <div class="inputs">
-                <input type="text" name="cnpj" id="cnpj" placeholder="CNPJ:" required>
-            </div>
-            <div class="inputs">
-                    <input type="text" name="endereco" id="endereco" placeholder="Endereço:" required>
-            </div>
-            <div>
-                    <div>
-                        <input type="text" name="CEP" class="CEP" placeholder="CEP: ">
-                        <input type="text" name="Num" class="CEP" placeholder="Numero: ">
-                    </div>
-                </div>
-            
-            <h1>PREÇOS</h1>
-        <div>
-            <div>
-                <input type="text" name="PGC" class="inputG" placeholder="Gasolina Comum">
-                <input type="text" name="PGA" class="inputG" placeholder="Gasolina Aditivada">
-                <input type="text" name="PGA" class="inputG" placeholder="Gasolina Premium">
-            </div>
-        </div>
-        <div>    
-            <div>
-                <input type="text" name="PGA" class="inputC" placeholder="Diesel">
-                <input type="text" name="PGA" class="inputC" placeholder="Etanol">
-                <input type="text" name="PGA" class="inputC" placeholder="GNV">
-            </div>
-        </div>
-            <input id="button" type="submit">
-            
-        </form>
-    <script type="text/javascript" src="JS/cadastroPostos.js"></script>
-    </body>
-    
+</body>
+
 
 </html>

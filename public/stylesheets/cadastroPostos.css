@@ -9,14 +9,13 @@ h1{
 }
 
 #img{
-    
     height: 15%; 
 }
 
 #divCentral {
     margin: 0 auto;
     background-color: black;
-    margin-top: 12vh;
+    margin-top: 4vh;
     border-radius: 5px;
     width: 40%;
     padding-top: 3%;
@@ -34,23 +33,50 @@ input {
 
 .inputs {
     padding-top: 4%;
-    padding-bottom: 5%; 
+    padding-bottom: 2%; 
 }
 
+
+.inputG {
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+
+}
+
+.inputC {
+
+    width: 100px;
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+
+}
+
+.CEP {
+    
+    margin-top: 15px;
+    width: 150px;
+    height: 30px;
+    margin-left: 10px;
+    margin-bottom: 2px;
+}
+
+
 #button {
-    margin-top: 1vh;;
+    margin-top: 1vh;
+    padding-top: 3px;
     margin-bottom: 6vh;
-    padding: 1vh;
     width:15vh; 
     height:30px;
     text-align: center; 
     border-radius: 10px;
-    font-family:"Century Gothic";
-    font-size: 20px;
+    font-family:"Open Sans";
+    font-size: 3vh;
     background-color: white;
     border-style:none;  
 } 
-
 #button:hover{
     background-color: darkorange;
     color: white;
@@ -59,28 +85,6 @@ input {
 
 body {
     background-color: orange;
-}
-
-.inputG {
-    width: 100px;
-    height: 35px;
-    margin-left: 2px;
-    margin-bottom: 2px;
-    
-}
-
-.inputC {
-    width: 100px;
-    height: 35px;
-    margin-left: 2px;
-}
-
-.CEP {
-    
-    width: 100px;
-    height: 35px;
-    margin-left: 2px;
-    margin-bottom: 2px;
 }
 
   /*------------------------responsividade altura -------------------------*/

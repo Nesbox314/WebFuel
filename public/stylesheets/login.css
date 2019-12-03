@@ -1,3 +1,7 @@
+.{
+    font-family: "Open Sans";
+}
+
 body {
     background-color: orange;    
 }
@@ -5,7 +9,7 @@ body {
 h1{
     color: white;
     font-size: 4vh;
-    font-family:"Century Gothic";   
+    font-family:"Open Sans";   
 }
 
 #img{
@@ -38,15 +42,14 @@ input {
 }
 
 #button {
-    margin-top: 1vh;;
+    margin-top: 1vh;
     margin-bottom: 6vh;
-    padding: 1vh;
     width:15vh; 
     height:30px;
     text-align: center; 
     border-radius: 10px;
-    font-family:"Century Gothic";
-    font-size: 20px;
+    font-family:"Open Sans";
+    font-size: 3vh;
     background-color: white;
     border-style:none;  
 } 
@@ -55,15 +58,7 @@ input {
     background-color: darkorange;
     color: white;
 }
- 
-body {
-    background-color: orange;
-}
 
-#button {
-    text-align: center;  
-  
-  }
 
   /*------------------------responsividade altura -------------------------*/
 

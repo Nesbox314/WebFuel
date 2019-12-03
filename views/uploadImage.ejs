@@ -1,16 +1,34 @@
 <html>
-    <head>
-          <link rel="stylesheet" type="text/css" href="" media="screen" />
-    </head>
-    <body>
-        <form action="/efetuaUploadImagem" method="POST" id="divCentral" enctype="multipart/form-data">
-            <h1>Quase pronto...</h1>
-            <div class="inputs">
-                <input type="file" name="foto" placeholder="Escolha o arquivo:">
-            </div>
-            
-            <input id="button" type="submit">
-            
-        </form>
-    </body>
+
+<head>
+    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="stylesheet" type="text/css" href="stylesheets/uploadImage.css" media="screen" />
+</head>
+
+<body>
+    <form action="/efetuaUploadImagem" method="POST" id="divCentral" enctype="multipart/form-data">
+        <h1>Quase pronto...</h1>
+        <img src="images/logo-fundo-branco.png" id="img"><br>
+
+        <h2>Selecione uma imagem para seu posto:<h2>
+                <div class="inputs">
+                    <label id="file" for='type'>Selecionar</label>
+
+                    <input type="file" name="foto" id="type" placeholder="Escolha o arquivo:" accept="image/*"
+                        onchange="loadFile(event)" />
+                    <h2><h2><br>
+                            <img id="output" />
+                </div>  
+                <script>
+                    var loadFile = function (event) {
+                        var output = document.getElementById('output');
+                        output.src = URL.createObjectURL(event.target.files[0]);
+                    };
+                </script>
+
+                <input id="button" type="submit">
+
+    </form>
+</body>
+
 </html>
