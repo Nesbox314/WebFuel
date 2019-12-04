@@ -1,7 +1,7 @@
 <html>
 <head>
 <title>WebFuel</title>
-<link rel="shortcut icon" href="images/logo.png">
+
 <link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen" />
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta charset="UTF-8">
@@ -16,19 +16,16 @@
     </div>
  
     <div class="tam-div" style="background-color: white" >
-     
-    <div>
-        <div>
-            <img id="local" src="images/icone-local.svg">
-            <span id="font-local">Rua: São Paulo, Floresta, Joinville</span>
-        </div>
-            
-        <div class="tam-div"> 
-            <span id="txt-posto"><input type="string" name="txt-posto" id="txt-post"><span id="Filtros">Filtros</span></span>
-        </div>
+        
+        <img id="local" src="images/icone-local.svg">
+    <span id="font-local">Rua: São Paulo, Floresta, Joinville</span>
+    </div>
+        
+    <div class="tam-div"> 
+        <span id="txt-posto"><input type="string" name="txt-posto" id="txt-post"><span id="Filtros">Filtros</span></span>
     </div>
 
-    <div class="tam-div" style="background-color: orange; top: 100px" >
+    <div class="tam-div" style="background-color: orange" >
         <div id="mel-ben">Melhores Custo x Benefício</div>
         
         <% for (var i = 0; i < Object.keys(datasetresult).length; i++) { %>

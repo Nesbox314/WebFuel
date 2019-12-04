@@ -229,12 +229,11 @@ router.get('/pedido', (req, res) =>{
 });
 
 router.post('/efetuaPedido', (req, res) =>{ 
-  var tipoCombustivel = req.body.tipoCombustivel.substring(0, 160);
   var endereco = req.body.endereco.substring(0, 160);
   var litros = req.body.litros.substring(0, 160);
   var formaPagamento = req.body.formaPagamento.substring(0, 160);
 
-  connection.query(`INSERT INTO pedidos(tipo, local, litros, forma) VALUES('${tipoCombustivel}', '${endereco}', '${litros}', '${formaPagamento}')`, function(err, results, fields) {
+  connection.query(`INSERT INTO pedidos(local, litros, forma) VALUES('${endereco}', '${litros}', '${formaPagamento}')`, function(err, results, fields) {
     if(err){
       console.log(err);
     } else {
