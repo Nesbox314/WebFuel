@@ -233,14 +233,14 @@ h1 {
 
     .titulo {
       float: right;
-      margin-right: 10vw;
-      font-size: 3.5vh;
+      margin-right: 30vw;
+      font-size: 6vh;
       color: orange;
     }
 
     #font-local2 {
       color: black;
-      font-size: 3vh;
+      font-size: 5vh;
       font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     }
 
@@ -269,7 +269,7 @@ h1 {
 
     #font-comb {
       color: black;
-      font-size: 2vh;
+      font-size: 3vh;
     }
 
     #text-dir {

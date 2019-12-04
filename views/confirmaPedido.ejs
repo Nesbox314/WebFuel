@@ -10,15 +10,14 @@
                 
                 <h1>Confirme o pedido</h1>
 
-                <h3>A gasolina será entregue em: <br> <%= datasetresult[0].local %> </h3>
+                <h3>A gasolina será entregue em:</h3> <h3><%= datasetresult[0].local %></h3>
 
-                <h3>E receberá exatamente:<br>  <%= datasetresult[0].litros %> Litros </h3> 
+                <h3>E receberá exatamente:<br></h3>  <h3><%= datasetresult[0].litros %> Litros</h3>
 
                 <h3>Dentro de 30 minutos</h3>
-
-                <div>
-                    <button type="submit" id="button">Confirma?</button>
-                </div>
-            </form>
+        
+            <div>
+                <a href="/logged"><button type="button" id="button">Confirma?</button></a>
+            </div>
     </body>
 </html>

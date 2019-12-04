@@ -219,7 +219,7 @@ router.post('/efetuaUploadImagem', (req, res) =>{
       });
 
       setTimeout(() => {
-        res.redirect('/');
+        res.redirect('/logged');
       }, 2000);
   });
 });
@@ -232,8 +232,9 @@ router.post('/efetuaPedido', (req, res) =>{
   var tipoCombustivel = req.body.tipoCombustivel.substring(0, 160);
   var endereco = req.body.endereco.substring(0, 160);
   var litros = req.body.litros.substring(0, 160);
+  var formaPagamento = req.body.formaPagamento.substring(0, 160);
 
-  connection.query(`INSERT INTO pedidos(tipo, local, litros) VALUES('${tipoCombustivel}', '${endereco}', '${litros}')`, function(err, results, fields) {
+  connection.query(`INSERT INTO pedidos(tipo, local, litros, forma) VALUES('${tipoCombustivel}', '${endereco}', '${litros}', '${formaPagamento}')`, function(err, results, fields) {
     if(err){
       console.log(err);
     } else {
@@ -244,12 +245,10 @@ router.post('/efetuaPedido', (req, res) =>{
 });
 
 router.get('/confirmaPedido', (req, res) =>{
+  var valortotal;
   connection.query(`SELECT * from pedidos where id= '${app.get('pedido')}'`, function(err, results, fields) {
     if(err){
       console.log(err);
-    }
-    if(results.tipo == 0){
-      var valortotal = results.litros 
     }
       res.render('confirmaPedido', { 
         title: 'Render by app.get',
