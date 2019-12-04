@@ -233,8 +233,8 @@ h1 {
 
     .titulo {
       float: right;
-      margin-right:30vw;
-      font-size: 6.5vh;
+      margin-right: 30vw;
+      font-size: 6vh;
       color: orange;
     }
 
@@ -269,8 +269,7 @@ h1 {
 
     #font-comb {
       color: black;
-      font-size: 4vh;
-      
+      font-size: 3vh;
     }
 
     #text-dir {
