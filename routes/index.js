@@ -6,15 +6,6 @@ const port = 3005; //porta padrão
 const mysql = require('mysql');
 const path = require('path');
 const multer = require('multer');
-var LocalStorage = require('node-localstorage').LocalStorage;
-localStorage = new LocalStorage('./scratch');
-var jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const { window } = new JSDOM();
-const document = (new JSDOM('')).window;
-global.document = document;
-
-var $ = jQuery = require('jquery')(window);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -121,14 +112,16 @@ router.post('/efetuaLogin', function(req, res, next){
     }
   });
 
-  var email = req.body.email.substring(0, 160);
-  var password = req.body.password.substring(0, 160);
+  /*var email = req.body.email.substring(0, 160);
+  var password = req.body.password.substring(0, 160);*/
 
-    if(email == 'admin' && password == 'admin'){
-      res.redirect('/logged');
+  res.redirect('/logged');
+
+    /*if(email == 'admin' && password == 'admin'){
+      
     } else {
       console.log("LOGIN INCORRETO");
-    }
+    }*/
 });
 
 
@@ -210,7 +203,7 @@ router.post('/efetuaUploadImagem', (req, res) =>{
     }
   });
 
-  upload(req, res, (err) => {
+  /*upload(req, res, (err) => {
       var idFoto = app.get('fotoId');
       connection.query(`UPDATE postos set foto = '${req.file.filename}' where id = '${idFoto}'`, function(err, results, fields){
         if(err){
@@ -218,10 +211,9 @@ router.post('/efetuaUploadImagem', (req, res) =>{
         }
       });
 
-      setTimeout(() => {
+      setTimeout(() => {*/
         res.redirect('/logged');
-      }, 2000);
-  });
+      /*}, 2000);*/
 });
 
 router.get('/pedido', (req, res) =>{ 
