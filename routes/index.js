@@ -202,18 +202,8 @@ router.post('/efetuaUploadImagem', (req, res) =>{
       console.log(err).redirect;
     }
   });
-
-  /*upload(req, res, (err) => {
-      var idFoto = app.get('fotoId');
-      connection.query(`UPDATE postos set foto = '${req.file.filename}' where id = '${idFoto}'`, function(err, results, fields){
-        if(err){
-          console.log(err);
-        }
-      });
-
-      setTimeout(() => {*/
-        res.redirect('/logged');
-      /*}, 2000);*/
+  
+    res.redirect('/logged');
 });
 
 router.get('/pedido', (req, res) =>{ 
