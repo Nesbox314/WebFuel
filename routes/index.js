@@ -51,38 +51,6 @@ router.get('/', function (req, res) {
     })
 });
 
-router.get('/logged', function (req, res) {
-  let createTodos = `create table if not exists postos(
-    id int(100) primary key auto_increment,
-    nome varchar(150)not null,
-    foto Blob,
-    avaliacao float,
-    precoGasolinaComum float,
-    precoGasolinaAditivada float,
-    precoEtanol float,
-    precoGnv float,
-    precoDieselS10 float,
-    precoDieselS500 float,
-    cnpj varchar(100)
-)`;
-
-  connection.query(createTodos, function(err, results, fields) {
-    if(err){
-      console.log(err);
-    }
-  });
-
-  connection.query('SELECT * FROM postos', function (error, results, fields) {
-    if(error){
-      console.log(error);
-    }
-      res.render('indexLogged', { 
-        title: 'Render by app.get',
-        datasetresult: results
-      });
-    })
-});
-
 router.get('/login', function(req, res, next){
   let createTodos = `create table if not exists usuarios(
     id int(11) primary key auto_increment,
@@ -115,7 +83,7 @@ router.post('/efetuaLogin', function(req, res, next){
   /*var email = req.body.email.substring(0, 160);
   var password = req.body.password.substring(0, 160);*/
 
-  res.redirect('/logged');
+  res.redirect('/');
 
     /*if(email == 'admin' && password == 'admin'){
       
@@ -204,15 +172,17 @@ router.post('/efetuaUploadImagem', (req, res) =>{
   });
 
   var base64photo = req.body.base64photo;
+  var idFoto = app.get('fotoId');
 
-  connection.query(`INSERT INTO postos(foto) VALUES('${base64photo}')`, function(err, results, fields) {
+  console.log(idFoto);
+
+  connection.query(`UPDATE postos SET foto = '${base64photo}' WHERE id = '${idFoto}'`, function(err, results, fields) {
     if(err){
       console.log(err);
     }
-    app.set('fotoId', results.insertId);
   });
   
-    res.redirect('/logged');
+    res.redirect('/');
 });
 
 router.get('/pedido', (req, res) =>{ 
