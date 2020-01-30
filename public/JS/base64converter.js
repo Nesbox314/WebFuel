@@ -7,7 +7,6 @@ const toBase64 = file => new Promise((resolve, reject) => {
 
 async function Main() {
  const file = document.querySelector('#foto').files[0];
- console.log(await toBase64(file));
 
- document.getElementById('resultado').innerHTML = 'TESTE';
+ document.getElementById('base64photo').value = await toBase64(file);
 }

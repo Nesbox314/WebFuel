@@ -2,6 +2,10 @@ body {
     background-color: orange;    
 }
 
+#base64photo {
+    display: none;
+}
+
 #output{
     margin-top: -5px;
     margin-bottom: -30px;

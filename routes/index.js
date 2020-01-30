@@ -26,7 +26,7 @@ router.get('/', function (req, res) {
   let createTodos = `create table if not exists postos(
     id int(100) primary key auto_increment,
     nome varchar(150)not null,
-    foto varchar(150),
+    foto Blob,
     avaliacao float,
     precoGasolinaComum float,
     precoGasolinaAditivada float,
@@ -55,7 +55,7 @@ router.get('/logged', function (req, res) {
   let createTodos = `create table if not exists postos(
     id int(100) primary key auto_increment,
     nome varchar(150)not null,
-    foto varchar(150),
+    foto Blob,
     avaliacao float,
     precoGasolinaComum float,
     precoGasolinaAditivada float,
@@ -151,7 +151,7 @@ router.post('/efetuaCadastroPostos', (req, res) =>{
   let createTodos = `create table if not exists postos(
     id int(100) primary key auto_increment,
     nome varchar(150)not null,
-    foto varchar(1000),
+    foto Blob,
     avaliacao float,
     precoGasolinaComum float,
     precoGasolinaAditivada float,
@@ -186,7 +186,7 @@ router.post('/efetuaUploadImagem', (req, res) =>{
   let createTodos = `create table if not exists postos(
     id int(100) primary key auto_increment,
     nome varchar(150)not null,
-    foto varchar(1000),
+    foto Blob,
     avaliacao float,
     precoGasolinaComum float,
     precoGasolinaAditivada float,
@@ -199,8 +199,17 @@ router.post('/efetuaUploadImagem', (req, res) =>{
 
   connection.query(createTodos, function(err, results, fields) {
     if(err){
-      console.log(err).redirect;
+      console.log(err);
     }
+  });
+
+  var base64photo = req.body.base64photo;
+
+  connection.query(`INSERT INTO postos(foto) VALUES('${base64photo}')`, function(err, results, fields) {
+    if(err){
+      console.log(err);
+    }
+    app.set('fotoId', results.insertId);
   });
   
     res.redirect('/logged');
@@ -237,16 +246,5 @@ router.get('/confirmaPedido', (req, res) =>{
       });
     })
   });
-
-const storage = multer.diskStorage({
-  destination: './public/logopostos/',
-  filename: function(req, file, cb){
-    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-  }
-});
-
-const upload = multer({
-  storage: storage
-}).single('foto');
 
 module.exports = router;
