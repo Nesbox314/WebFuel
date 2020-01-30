@@ -21,7 +21,6 @@ const connection = mysql.createConnection({
 //inicia o servidor
 app.listen(port, '0.0.0.0');
 
-/* GET home page. */
 router.get('/', function (req, res) {
   let createTodos = `create table if not exists postos(
     id int(100) primary key auto_increment,
@@ -80,16 +79,7 @@ router.post('/efetuaLogin', function(req, res, next){
     }
   });
 
-  /*var email = req.body.email.substring(0, 160);
-  var password = req.body.password.substring(0, 160);*/
-
   res.redirect('/');
-
-    /*if(email == 'admin' && password == 'admin'){
-      
-    } else {
-      console.log("LOGIN INCORRETO");
-    }*/
 });
 
 
@@ -205,7 +195,6 @@ router.post('/efetuaPedido', (req, res) =>{
 });
 
 router.get('/confirmaPedido', (req, res) =>{
-  var valortotal;
   connection.query(`SELECT * from pedidos where id= '${app.get('pedido')}'`, function(err, results, fields) {
     if(err){
       console.log(err);
