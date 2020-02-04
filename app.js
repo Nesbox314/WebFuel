@@ -17,7 +17,6 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
-
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler

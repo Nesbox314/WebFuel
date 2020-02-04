@@ -1,11 +1,9 @@
 var express = require('express');
 var router = express.Router();
-const app = express();         
-const bodyParser = require('body-parser');
+const app = express();
 const port = 3005; //porta padrão
 const mysql = require('mysql');
 const path = require('path');
-const multer = require('multer');
 var bcryptjs = require('bcryptjs');
 
 app.set('views', path.join(__dirname, 'views'));
@@ -80,6 +78,13 @@ router.post('/efetuaLogin', function(req, res, next){
     }
   });
 
+  connection.query("SELECT * FROM usuarios", function(err, results, fields) {
+    if(err){
+      console.log(err);
+    }
+    console.log(results);
+  })
+
   res.redirect('/');
 });
 
@@ -101,7 +106,7 @@ router.get('/cadastroUsuario', function(req, res, next){
   res.render('cadastroUsuario');
 });
 
-router.post('/efetuaCadastroUsuario', function(req, res, next){
+router.post('/efetuaCadastroUsuario', async function(req, res, next){
   let createTodos = `create table if not exists usuarios(
     id int(11) primary key auto_increment,
     username varchar(100),
@@ -119,10 +124,9 @@ router.post('/efetuaCadastroUsuario', function(req, res, next){
   var password = req.body.password;
   var email = req.body.email;
 
-  var salt = bcryptjs.genSaltSync(10);
-  var hash = bcryptjs.hashSync(password, salt);
+  var senhaHasheada =  await bcryptjs.hashSync(password, 10);
   
-  connection.query(`INSERT INTO usuarios (username, password, email) VALUES ('${username}', '${password}', '${email}');`, function(err, results, fields) {
+  connection.query(`INSERT INTO usuarios (username, password, email) VALUES ('${username}', '${senhaHasheada}', '${email}');`, function(err, results, fields) {
     if(err){
       console.log(err);
     }else{
