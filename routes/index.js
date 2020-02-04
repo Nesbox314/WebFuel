@@ -100,6 +100,35 @@ router.get('/cadastroUsuario', function(req, res, next){
   res.render('cadastroUsuario');
 });
 
+router.post('/efetuaCadastroUsuario', function(req, res, next){
+  let createTodos = `create table if not exists usuarios(
+    id int(11) primary key auto_increment,
+    username varchar(100),
+    password varchar(100),
+    email varchar(100)
+  )`;
+
+  connection.query(createTodos, function(err, results, fields) {
+    if(err){
+      console.log(err);
+    }
+  });
+
+  var username = req.body.nome;
+  var password = req.body.password;
+  var email = req.body.email;
+
+  connection.query(`INSERT INTO usuarios (username, password, email) VALUES ('${username}', '${password}', '${email}');`, function(err, results, fields) {
+    if(err){
+      console.log(err);
+    }else{
+      console.log("Query executada com sucesso!");
+    }
+  });
+
+  res.redirect('/');
+});
+
 
 router.get('/cadastroPostos', function(req, res, next){
   res.render('cadastroPostos');
