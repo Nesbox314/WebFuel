@@ -6,6 +6,7 @@ const port = 3005; //porta padrão
 const mysql = require('mysql');
 const path = require('path');
 const multer = require('multer');
+var bcryptjs = require('bcryptjs');
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -118,6 +119,9 @@ router.post('/efetuaCadastroUsuario', function(req, res, next){
   var password = req.body.password;
   var email = req.body.email;
 
+  var salt = bcryptjs.genSaltSync(10);
+  var hash = bcryptjs.hashSync(password, salt);
+  
   connection.query(`INSERT INTO usuarios (username, password, email) VALUES ('${username}', '${password}', '${email}');`, function(err, results, fields) {
     if(err){
       console.log(err);
