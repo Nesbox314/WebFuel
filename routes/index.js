@@ -78,16 +78,23 @@ router.post('/efetuaLogin', function(req, res, next){
     }
   });
 
+  var email = req.body.email;
+  var password = req.body.password;
+
   connection.query("SELECT * FROM usuarios", function(err, results, fields) {
     if(err){
       console.log(err);
     }
-    console.log(results);
+
+    for(var x = 0; x <= results.length-1; x++){
+      if(email === results[x].email && bcryptjs.compare(password, results[x].password)){
+        console.log('LOGIN BEM SUCEDIDO');
+      }
+    }
   })
 
   res.redirect('/');
 });
-
 
 router.get('/cadastroUsuario', function(req, res, next){
   let createTodos = `create table if not exists usuarios(
@@ -132,6 +139,8 @@ router.post('/efetuaCadastroUsuario', async function(req, res, next){
     }else{
       console.log("Query executada com sucesso!");
     }
+
+    
   });
 
   res.redirect('/');
