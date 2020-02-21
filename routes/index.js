@@ -88,13 +88,14 @@ router.post('/efetuaLogin', function(req, res, next){
 
     for(var x = 0; x <= results.length-1; x++){
       if(email == results[x].email && bcryptjs.compare(password, results[x].password)){
-        console.log('LOGIN BEM SUCEDIDO');
         res.redirect('/');
+      }else {
+        res.send("NÃO ROLOU")
       }
     }
   })
 
-  res.send("NÃO ROLOU")
+  
 });
 
 router.get('/cadastroUsuario', function(req, res, next){
